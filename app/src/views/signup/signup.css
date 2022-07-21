@@ -1,0 +1,23 @@
+*{
+    /* border: 1px solid gray; */
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.layout{
+    width: 500px;
+    height: 900px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid gray;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
