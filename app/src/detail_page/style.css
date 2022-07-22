@@ -1,0 +1,56 @@
+
+header {
+  z-index: 1;
+}
+
+
+.breadCrumb {
+  margin-top: 8rem;
+  margin-bottom: 5rem;
+}
+
+footer {
+  margin-top: 8rem;
+}
+
+.list-group-item {
+  padding-right : 2rem;
+  padding-left : 2rem;
+  margin-top: 0.5rem;
+}
+
+#icon {
+  margin-right: 1rem;
+}
+
+.list-group-item:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+}
+
+#sidebar {
+  margin-top: 5rem;
+  position: fixed;
+  z-index: 999;
+  transform: translateY(-50%); 
+}
+
+.dot {
+  text-decoration: none;
+  color : black;
+}
+
+.divhr {
+  margin-bottom: 1.5rem;
+}
+
+.container h4 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+#center,
+#teacher,
+#map {
+  margin-top : 12rem;
+}
