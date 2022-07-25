@@ -1,12 +1,26 @@
 
-header {
-  z-index: 1;
+* {
+  box-sizing: border-box;
 }
 
 
+header,
+.navbar {
+  /* height: 7rem; */
+}
+
+.navbar-brand {
+  font-size: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.navbar-nav {
+  font-size: 1.5rem;
+}
+
 .breadCrumb {
-  margin-top: 8rem;
-  margin-bottom: 5rem;
+  margin-top: 4rem;
 }
 
 footer {
@@ -29,7 +43,7 @@ footer {
 }
 
 #sidebar {
-  margin-top: 5rem;
+  margin-top: 13rem;
   position: fixed;
   z-index: 999;
   transform: translateY(-50%); 
@@ -49,8 +63,19 @@ footer {
   margin-bottom: 1rem;
 }
 
+
+#company,
 #center,
 #teacher,
 #map {
-  margin-top : 12rem;
+  padding-top: 8rem;
+}
+
+
+.items {
+  margin-top: 2rem;
+  height: 25rem;
+  overflow-y: auto; /* 아이템이 늘어날때 스크롤바 생성 */
+  background-color: #f1f0f1;
+  border-radius: 20px;
 }

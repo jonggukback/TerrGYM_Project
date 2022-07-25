@@ -8,7 +8,7 @@
 
     <!-- ################## CSS ################## -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/style.css">
 
     <!-- ################## Jquery ################## -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -17,13 +17,16 @@
     <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
 
 </head>
+
+
+
 <body>
   <!-- ################## Header Start ##################-->
   <header>
     <!-- navbar Start -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">IntelliGym</a>
+        <a class="navbar-brand" href="#">IntelliGym</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -76,159 +79,170 @@
     </nav>
     <!-- navbar End -->
   </header>
-  
   <!-- ################## Header End ##################-->
-  
+
+
 
 
 
   <!-- ################## Main Start ##################-->
-  <div class="container">
-    <div class="row"> <!-- 메인 1열 9:3 -->
-      <div class="col-sm-9"></div>
-      <!-- ################## Bread Crumb Start ##################-->
-      <div class="col-sm-3">
-        <section class="breadCrumb">
-          <div class="container">
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-house"></i></a></li>
-                <li class="breadcrumb-item active" aria-current="page">About</li>
-              </ol>
-            </nav>
+  <main>
+    <div class="container">
+      <div class="row"> <!-- 메인 1열 9:3 -->
+        <div class="col-sm-9"></div>
+  
+        <!-- ################## Bread Crumb Start ##################-->
+        <div class="col-sm-3">
+          <section class="breadCrumb">
+              <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="#"><i class="fa-solid fa-house"></i></a></li>
+                  <li class="breadcrumb-item active" aria-current="page">About</li>
+                </ol>
+              </nav>
+          </section>
+        </div>
+          <!-- ################## Bread Crumb End ##################-->
+      </div>
+  
+  
+      <div class="row"> <!-- 메인 2열 md3:9 sm0:12 -->
+        <!-- ################## Side bar start ##################-->
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="d-flex gap-5 justify-content-center" id="sidebar">
+            <ul class="list-group list-group-flush" id="menu1">
+              <p class="display-5 fw-bold">About</p>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-building"></i>
+                <a data-scroll="company" href="#company" class="dot active">회사 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-location-dot"></i>
+                <a data-scroll="center" href="#center" class="dot">센터 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-user-group"></i>
+                <a data-scroll="teacher" href="#teacher" class="dot">강사 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-car"></i>
+                <a data-scroll="map" href="#map" class="dot">오시는 길</a>
+              </li>
+            </ul>
           </div>
-        </section>
-      </div>
-        <!-- ################## Bread Crumb End ##################-->
-    </div>
-
-    <div class="row"> <!-- 메인 2열 md3:9 sm0:12 -->
-      <!-- ################## Side bar start ##################-->
-      <div class="col-lg-3 d-none d-lg-block">
-        <div class="d-flex gap-5 justify-content-center" id="sidebar">
-          <ul class="list-group list-group-flush" id="menu1">
-            <p class="fs-2 fw-bold">About</p>
-            <li class="list-group-item">
-              <i id="icon" class="fa-solid fa-building"></i>
-              <a data-scroll="company" href="#company" class="dot active">회사 소개</a>
-            </li>
-            <li class="list-group-item">
-              <i id="icon" class="fa-solid fa-dumbbell"></i>
-              <a data-scroll="center" href="#center" class="dot">센터 소개</a>
-            </li>
-            <li class="list-group-item">
-              <i id="icon" class="fa-solid fa-user-group"></i>
-              <a data-scroll="teacher" href="#teacher" class="dot">강사 소개</a>
-            </li>
-            <li class="list-group-item">
-              <i id="icon" class="fa-solid fa-car"></i>
-              <a data-scroll="map" href="#map" class="dot">오시는 길</a>
-            </li>
-          </ul>
         </div>
-      </div>
-      <!-- ################## Side bar End ##################-->
+        <!-- ################## Side bar End ##################-->
+  
+  
+        <!-- ################## article start ##################-->
+        <div class="col-lg-9 col-sm-12">
+          <div class="container">
+  
+            <section id="company">
+              <h1 class="display-5 fw-bold">회사 소개</h1>
+              <div class="divhr" style='background:#29b6f6; height:5px;'></div>
+              <img src="/img/gym6.jpg" class="img-fluid" alt="...">
+              <h4>
+                <i class="fa-solid fa-quote-left"></i>&nbsp;Intelligent + Gym&nbsp;<i class="fa-solid fa-quote-right"></i>
+              </h4>
+              <p class="lh-base">
+                당신이 찾던 똑똑한 운동 공간,<br>
+                인텔리짐은 고객들을 만족시킬 수 있는 똑똑한 운동 파트너로서 고객이 필요로 하는 최적화된 운동 서비스를 
+                제공하기 위해 노력하고 있습니다. 첨단 기술과 최고의 시설, 메디컬 피트니스라는 새로운 장르를 도입하여
+                급변하는 과학 기술 속에서 차세대 피트니스 문화를 이끌어가기 위해 끊임없이 연구하고 있습니다.
+              </p>
+              <h4>
+                <i class="fa-solid fa-quote-left"></i>&nbsp;기초체력, 혈압, 체성분 측정을 통한 맞춤형 운동 프로그램&nbsp;<i class="fa-solid fa-quote-right"></i>
+              </h4>
+              <p class="lh-base">
+                처음 운동을 시작하는 초보자분들도 인텔리짐의 운동 프로그램을 통해 체계적으로 관리받을 수 있습니다. 
+                각 센터마다 비치된 인바디 측정기와 혈압 측정기로 신체 상태를 확인하고 이를 분석하여 맞춤 운동 프로그램을 
+                시작하게 됩니다. 이후 앱을 통해 고객님의 신체 상태를 꾸준히 업데이트하여 지속적인 관리를 받을 수 있습니다. 
+                인텔리짐은 자문 협력 병원과 콜라보레이션을 통해 과학적이고 체계적인 프로그램을 진행하고 있습니다.
+              </p>
+              <h4>
+                <i class="fa-solid fa-quote-left"></i>&nbsp;스마트 밴드와 키오스크, 스마트 미러를 이용한 똑똑한 운동 습관&nbsp;<i class="fa-solid fa-quote-right"></i>
+              </h4>
+              <p class="lh-base">
+                스마트폰을 통한 회원 인증뿐만 아니라 새롭게 도입된 스마트밴드를 통해 더욱 간편하고 편하게 운동을 즐길 수 있습니다. 
+                키오스크와 스마트밴드로 출석 체크를 하여 빠르게 라커를 발급받을 수 있으며  화면을 통해 건강 관리 기능이나 
+                회원권 확인, 식단 관리, 기타 문의, 센터 운영시간 등을 따로 검색하지 않아도 한눈에 확인할 수 있습니다.
+              </p>
+              <p class="lh-base">
+                각 운동기구에 부착된 모니터는 트레이닝을 받지 않더라도 언제든지 자유롭게 개인적인 운동을 즐길 수 있습니다. 
+                모든 운동을 끝낸 뒤에는 스마트폰 앱의 운동 일지에서 오늘 운동한 내용을 확인할 수도 있습니다.
+              </p>
+            </section>
+  
 
-      <!-- ################## article start ##################-->
-      <div class="col-lg-9 col-sm-12">
-        <div class="container">
 
-          <section id="company">
-            <p class="fs-1">회사 소개</p>
-            <div class="divhr" style='background:#29b6f6; height:5px;'></div>
-            <img src="./img/gym6.jpg" class="img-fluid" alt="...">
-            <h4>
-              <i class="fa-solid fa-quote-left"></i>&nbsp;Intelligent + Gym&nbsp;<i class="fa-solid fa-quote-right"></i>
-            </h4>
-            <p>
-              당신이 찾던 똑똑한 운동 공간,<br>
-              인텔리짐은 고객들을 만족시킬 수 있는 똑똑한 운동 파트너로서 고객이 필요로하는 최적화된 운동 서비스를 
-              제공하기 위해 노력하고 있습니다. 첨단기술과 최고의 시설, 메디컬피트니스라는 새로운 장르를 도입하여
-              급변하는 과학 기술 속에서 차세대 피트니스 문화를 이끌어가기 위해 끊임없이 연구하고 있습니다.
-            </p>
-            <h4>
-              <i class="fa-solid fa-quote-left"></i>&nbsp;기초체력, 혈압, 체성분 측정을 통한 맞춤형 운동 프로그램&nbsp;<i class="fa-solid fa-quote-right"></i>
-            </h4>
-            <p>
-              처음 운동을 시작하는 초보자 분들도 인텔리짐의 운동 프로그램을 통해 체계적으로 관리받을 수 있습니다. 
-              각 센터마다 비치된 인바디 측정기와 혈압 측정기로 신체 상태를 확인하고 이를 분석하여 맞춤 운동 프로그램을 
-              시작하게 됩니다. 이후 어플을 통해 고객님의 신체 상태를 꾸준히 업데이트하여 지속적인 관리를 받을 수 있습니다. 
-              인텔리짐은 자문 협력 병원과 콜라보레이션을 통해 과학적이고 체계적인 프로그램을 진행하고 있습니다.
-            </p>
-            <h4>
-              <i class="fa-solid fa-quote-left"></i>&nbsp;스마트밴드와 키오스크, 스마트 미러를 이용한 똑똑한 운동 습관&nbsp;<i class="fa-solid fa-quote-right"></i>
-            </h4>
-            <p>
-              스마트폰을 통한 회원 인증 뿐만 아니라 새롭게 도입된 스마트밴드를 통해 더욱 간편하고 편하게 운동을 즐길 수 있습니다. 
-              키오스크와 스마트밴드로 출석 체크를 하여 빠르게 라커를 발급 받을 수 있으며  화면을통해 건강 관리 기능이나 
-              회원권 확인, 식단 관리, 기타 문의, 센터 운영시간 등을 따로 검색하지 않아도 한눈에 확인할 수 있습니다.
-            </p>
-            <p>
-              각 운동기구에 부착된 모니터는 트레이닝을 받지 않더라도 언제든지 자유롭게 개인적인 운동을 즐길 수 있습니다. 
-              모든 운동을 끝낸 뒤에는 스마트폰 어플의 운동일지에서 오늘 운동한 내용을 확인할 수도 있습니다.
-            </p>
-          </section>
+            <section id="center">
+              <h1 class="display-5 fw-bold">센터 소개</h1>
+              <div class="divhr" style='background:#29b6f6; height:5px;'></div>
+              
+              <div class="container">
+                <select id="select_value" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                  <option selected>찾으실 센터를 선택해주세요</option>
+                  <option value="1">강남 센터</option>
+                  <option value="2">수유 센터</option>
+                  <option value="3">창동 센터</option>
+                  <option value="4">구리 센터</option>
+                  <option value="5">성남 센터</option>
+                </select>
+                <div> 
+                  <ul class="items">
+                    <!-- -------------------Selected items here with JS ----------------------- -->
+                  </ul>
+                </div>
+              </div>
+            </section>
+  
 
-          <section id="center">
-            <p class="fs-1">센터 소개</p>
-            <div class="divhr" style='background:#29b6f6; height:5px;'></div>
-            <i class="fa-solid fa-location-dot"></i>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-          </section>
 
-          <section id="teacher">
-            <p class="fs-1">강사 소개</p>
-            <div class="divhr" style='background:#29b6f6; height:5px;'></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-          </section>
 
-          <section id="map">
-            <p class="fs-1">오시는 길</p>
-            <div class="divhr" style='background:#29b6f6; height:5px;'></div>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
-              Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
-              voluptatum, in non maiores dolores iste!</p>
-          </section>
-          
+            <section id="teacher">
+              <h1 class="display-5 fw-bold">강사 소개</h1>
+              <div class="divhr" style='background:#29b6f6; height:5px;'></div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+            </section>
+  
+            <section id="map">
+              <h1 class="display-5 fw-bold">오시는 길</h1>
+              <div class="divhr" style='background:#29b6f6; height:5px;'></div>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+              <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id et pariatur iure iste? 
+                Exercitationem consectetur aliquid, ducimus velit vero ad voluptate natus nam delectus 
+                voluptatum, in non maiores dolores iste!</p>
+            </section>
+            
+          </div>
         </div>
+        <!-- ################## article End ##################-->
       </div>
-      <!-- ################## article End ##################-->
+  
     </div>
-  </div>
+  </main>
   <!-- ################## Main End ##################-->
 
 
+
+  
 
 
   <!-- ################## Footer Start ##################-->
@@ -248,7 +262,7 @@
   <!-- ################## Footer End ##################-->
 
     <!-- JS -->
-    <script src="assets/js/main.js"></script>
+    <script src="/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </body>
