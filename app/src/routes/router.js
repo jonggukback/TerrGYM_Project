@@ -11,6 +11,11 @@ router.use(express.urlencoded({ extended: true }))
 /*============== 컨트롤러 사용 ==============*/
 import { process,render } from './controller.js';
 
+/*============== 마이페이지 요청 ==============*/
+router.get('/mypage',render.mypage);
+router.post('/mypage',process.islogin);
+router.post('/mypage2',process.logout);
+
 /*============== 로그인 요청 ==============*/
 router.get('/login',render.login);
 router.post('/login',process.login);
