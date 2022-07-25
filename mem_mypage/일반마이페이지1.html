@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반마이페이지</title>
+
+      <!-- BootStrap -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+      <!-- Font Awesome -->
+      <script src="https://kit.fontawesome.com/08fb45d3d6.js" crossorigin="anonymous"></script>
+      <!-- CSS -->
+      <link rel="stylesheet" href="./일반마이페이지1.css">
+       <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!-- js와 연결하기 -->
+      <script src="./일반마이페이지1.js" defer></script>
+   <!-- Custom styles for this template -->
+   <link href="sidebars.css" rel="stylesheet">
+<!-- 아이콘그리드ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ -->
+
+<link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/features/">
+<link href="features.css" rel="stylesheet">
+    
+
+    
+
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- Favicons -->
+<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+<meta name="theme-color" content="#712cf9">
+
+
+</head>
+
+
+
+
+
+
+ <!-- ################## Header Start ##################-->
+ <header>
+    <!-- navbar Start -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">IntelliGym</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회사 소개</a></li>
+                <li><a class="dropdown-item" href="#">센터 소개</a></li>
+                <li><a class="dropdown-item" href="#">강사 소개</a></li>
+                <li><a class="dropdown-item" href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Program
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Personal Training</a></li>
+                <li><a class="dropdown-item" href="#">Group Exercise</a></li>
+                <li><a class="dropdown-item" href="#">Pilates</a></li>
+                <li><a class="dropdown-item" href="#">Golf Academy</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="membership.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Membership
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회원권 안내</a></li>
+                <li><a class="dropdown-item" href="#">상담 신청</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Community
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                <li><a class="dropdown-item" href="#">공지사항(FAQ)</a></li>
+                <li><a class="dropdown-item" href="#">제휴 문의</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar End -->
+  </header>
+  
+  <!-- ################## Header End ##################-->
+  
+  <div class="container"></div>
+
+
+
+
+
+  <!--========================== side 바 시작 =====================================-->
+  
+  <main class="d-flex flex-nowrap  pt-5"  id="side-bar" >
+    <h1 class="visually-hidden">Sidebars examples</h1>
+  
+
+   <!--  <div class="b-example-divider b-example-vr"></div> -->
+  
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-5 fw-semibold">My Page</span>
+      </a>
+      <hr>
+
+      <ul class="nav nav-pills flex-column mb-auto">
+
+        <li class="nav-item">
+            <!-- <a href="#" class="nav-link link-dark"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#info-collapse" aria-controls="info-collapse">개인정보</button>
+              <ul class="list-unstyled ps-3 collapse" id="info-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">회원정보변경</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">회원탈퇴신청</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">1:1 문의내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">내 게시글 보기</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">카카오톡 문의</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">1:1게시판</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">수강내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">Typography</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#payment-collapse" aria-controls="payment-collapse">결재내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="payment-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">Typography</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a href="#" class="nav-link link-dark">
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#inbody-collapse" aria-controls="inbody-collapse">인바디정보</button>
+              <ul class="list-unstyled ps-3 collapse" id="inbody-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">신체정보</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">인바디현황</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">운동현황</a></li>
+              </ul>
+            </a>
+        </li>
+
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="data:image/jpeg;base64,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" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>ㄱㄷㅇ</strong>
+        </a>
+        <!-- 왼쪽 하단 시작 ___ 없애도 될듯 이상해 -->
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div> 
+      <!-- 왼쪽 하단 끝 -->
+    </div>
+    </div>
+    
+    <!--======================= side 바 끝 =====================================-->
+
+    
+
+<!-- =========================== 개인정보 시작======================================== -->
+
+
+
+<div class="my_privacy"><!-- "b-example-divider" -->
+    <div class="container px-4 py-5" id="icon-grid">
+        <h5 class="pb-2 border-bottom">Privacy</h5>
+      
+        <div class="divhr" style='background:lightslategray; height:4px;'></div>
+      
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-3 g-4 py-5">
+      
+          <div class="col d-flex align-items-start" id="privacy">
+            <div>
+              <h4 class="fw-bold mb-0">IMG</h4>
+              <p>Paragraph of text beneath the heading to explain the heading.</p>
+            </div>
+          </div>
+      
+          <div class="col d-flex align-items-start">
+            <div>
+              <h4 class="fw-bold mb-0">INFO</h4>
+              <p>김지연(UID)님</br>전화 01020140273</br>이메일 kimgy44@naver.com</br>주소 서울시 도봉구 창동</p>
+            </div>
+          </div>
+          
+          <div class="col d-flex align-items-start">
+            <div>
+              <h4 class="fw-bold mb-0">CLASS</h4>
+              <p>현재수강내역 필라테스 수업</br>예약현황 2022.07.24 8pm</p>
+            </div>
+          </div>
+       
+         
+        </div>
+      </div>
+      
+      
+
+
+<!-- =========================== 개인정보 끝======================================== -->
+
+
+
+
+
+<!-- =========================== 최근 수업정보 시작======================================== -->
+
+    <div class="container px-4 py-5" id="icon-grid">
+        <h5 class="pb-2 border-bottom">최근 수업 정보</h5>
+      
+        <div class="divhr" style='background:lightslategray; height:4px;'></div>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">DATE</th>
+                  <th scope="col">PROGRAM</th>
+                  <th scope="col">TIME</th>
+                  <th scope="col">ETC</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>random</td>
+                  <td>data</td>
+                  <td>placeholder</td>
+                  <td>text</td>
+                </tr>
+                <tr>
+                  <td>2</td>
+                  <td>placeholder</td>
+                  <td>irrelevant</td>
+                  <td>visual</td>
+                  <td>layout</td>
+                </tr>
+                <tr>
+                  <td>3</td>
+                  <td>data</td>
+                  <td>rich</td>
+                  <td>dashboard</td>
+                  <td>tabular</td>
+                </tr>
+                <tr>
+                  <td>4</td>
+                  <td>information</td>
+                  <td>placeholder</td>
+                  <td>illustrative</td>
+                  <td>data</td>
+                </tr>
+                <tr>
+                  <td>5</td>
+                  <td>text</td>
+                  <td>random</td>
+                  <td>layout</td>
+                  <td>dashboard</td>
+                </tr>
+                <tr>
+                  <td>6</td>
+                  <td>dashboard</td>
+                  <td>irrelevant</td>
+                  <td>text</td>
+                  <td>placeholder</td>
+                </tr>
+                <tr>
+                  <td>7</td>
+                  <td>dashboard</td>
+                  <td>illustrative</td>
+                  <td>rich</td>
+                  <td>data</td>
+                </tr>
+               
+              </tbody>
+            </table>
+          </div>
+      </div>
+
+
+<!-- =========================== 최근 수업정보 끝======================================== -->
+
+
+<!-- =========================== 운동 현황 시작======================================== -->
+
+<div class="container px-4 py-5" id="icon-grid">
+    <h5 class="pb-2 border-bottom">1:1 문의 내역</h5>
+  
+    <div class="divhr" style='background:lightslategray; height:4px;'></div>
+
+    <div class="table-responsive">
+        <table class="table table-striped table-sm">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">DATE</th>
+              <th scope="col">SUBJECT</th>
+              <th scope="col">ETC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>random</td>
+              <td>data</td>
+              <td>placeholder</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>placeholder</td>
+              <td>irrelevant</td>
+              <td>visual</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>data</td>
+              <td>rich</td>
+              <td>dashboard</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>information</td>
+              <td>placeholder</td>
+              <td>illustrative</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>text</td>
+              <td>random</td>
+              <td>layout</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>dashboard</td>
+              <td>irrelevant</td>
+              <td>text</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>dashboard</td>
+              <td>illustrative</td>
+              <td>rich</td>
+            </tr>
+           
+          </tbody>
+        </table>
+      </div>
+  </div>
+
+
+<!-- =========================== 운동 현황 끝======================================== -->
+
+
+
+<!-- =========================== 인바디 정보 시작======================================== -->
+
+<div class="container px-4 py-5" id="icon-grid">
+    <h5 class="pb-2 border-bottom">내 인바디정보</h5>
+  
+    <div class="divhr" style='background:lightslategray; height:4px;'></div>
+
+
+
+
+<!-- =========================== 인바디 정보 끝======================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- ========================= FOOTER 시작 =======================================-->
+<footer>
+
+    <div class="container ">
+    
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3 ">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">오시는길</a></li>
+          </ul>
+          <p class="text-center text-muted">
+            상호 : 인텔리 짐 | 
+            대표 : 백종국, 김지연, 이여진, 신현아 | 
+            주소 : 서울시 역삼동 남도빌딩 KH 2층|</br>
+            Tel : 2022-07-19 ~ 2022.08.26</br>
+            &copy; 2022 Company, Inc</p>
+        </footer>
+      </div>
+      
+      <!-- 밑에 하단 줄 -->
+      <!-- <div class="b-example-divider"></div>  -->
+      
+
+</footer>
+
+</div>
+</main>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script><script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script><script src="dashboard.js"></script>
+  <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+</body>
+</html>
