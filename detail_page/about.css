@@ -43,10 +43,15 @@ footer {
 }
 
 #sidebar {
-  margin-top: 13rem;
+  margin-top: 17rem;
+  margin-left: 5rem;
   position: fixed;
   z-index: 999;
   transform: translateY(-50%); 
+}
+
+#article {
+  
 }
 
 .dot {
@@ -74,8 +79,12 @@ footer {
 
 .items {
   margin-top: 2rem;
-  height: 25rem;
+  height: 40rem;
   overflow-y: auto; /* 아이템이 늘어날때 스크롤바 생성 */
   background-color: #f1f0f1;
   border-radius: 20px;
+}
+
+.card {
+  margin: 1rem;
 }
