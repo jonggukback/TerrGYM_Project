@@ -1,7 +1,7 @@
 "use strict";
 
-import { async } from '@firebase/util';
 import { User } from '../models/User.js';
+import { Record } from '../models/database.js';
 
 const render = {
     login : (req,res)=>{
@@ -13,13 +13,15 @@ const render = {
     mypage: (req,res)=>{
         res.render('mypage/mypage');
     },
+    record: (req,res)=>{
+        res.render('record/record');
+    }
 }
 
-const process = {
+const user = {
     login : async (req, res) => {
         const user = new User(req.body);
         const respones = await user.login();
-        console.log(respones);
         return res.json(respones);
     },
     islogin : async (req,res)=>{
@@ -28,7 +30,6 @@ const process = {
         const uid = respones.uid;
         const profile = await user.profile(respones.uid);
         respones.profile = profile;
-        console.log(respones);
         return res.json(respones);
     },
     logout : async (req,res)=>{
@@ -44,4 +45,43 @@ const process = {
         return res.json(respones);
     },
 }
-export {render, process};
+
+const record = {
+    getlist : async (req, res) => {
+        const record = new Record(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await record.getList(islogin.uid);
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+    setlist : async (req, res) => {
+        const record = new Record(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await record.setList(islogin.uid);
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+    deleterow: async (req, res) => {
+        const record = new Record(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await record.deleteRow(islogin.uid);
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    }
+}
+export {render, user, record};

@@ -1,7 +1,7 @@
 window.onload = ()=>{
     console.log('window.onload 호출 성공');
 
-    fetch('/mypage',{
+    fetch('/islogin',{
         method : "POST",
     })
     .then((res)=>res.json())
@@ -11,6 +11,7 @@ window.onload = ()=>{
             console.log(res);
         }else {
             alert(res.msg);
+            location.href ='/login';
         }
     })
 };
@@ -18,7 +19,7 @@ window.onload = ()=>{
 const logoutbtn = document.querySelector('#logoutbtn');
 
 logoutbtn.addEventListener('click', ()=>{
-    fetch('/mypage2',{
+    fetch('/islogin',{
         method : "POST",
     })
     .then(res=>res.json())
