@@ -1,12 +1,12 @@
 
-* {
+body {
   box-sizing: border-box;
+  padding-top: 10rem;
 }
 
-
-header,
-.navbar {
-  /* height: 7rem; */
+.container-fluid{
+  padding-right: 6rem;
+  padding-left: 6rem;
 }
 
 .navbar-brand {
@@ -19,18 +19,23 @@ header,
   font-size: 1.5rem;
 }
 
-.breadCrumb {
-  margin-top: 4rem;
-}
-
 footer {
   margin-top: 8rem;
 }
 
+list-group p {
+  margin-bottom: 5rem;
+}
+
+/* 파란색 구분선 */
+.divhr {
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
 .list-group-item {
-  padding-right : 2rem;
-  padding-left : 2rem;
-  margin-top: 0.5rem;
+  font-size: 1.2rem;
+  margin-top: 1.3rem;
 }
 
 #icon {
@@ -43,15 +48,10 @@ footer {
 }
 
 #sidebar {
-  margin-top: 17rem;
-  margin-left: 5rem;
+  margin-top: 18rem;
   position: fixed;
   z-index: 999;
   transform: translateY(-50%); 
-}
-
-#article {
-  
 }
 
 .dot {
@@ -59,13 +59,15 @@ footer {
   color : black;
 }
 
-.divhr {
-  margin-bottom: 1.5rem;
-}
-
-.container h4 {
+section h4 {
   margin-top: 3rem;
   margin-bottom: 1rem;
+  font-size: 1.7rem;
+  font-weight: bold;
+}
+
+section p {
+  font-size: 1.3rem;
 }
 
 
@@ -73,18 +75,87 @@ footer {
 #center,
 #teacher,
 #map {
-  padding-top: 8rem;
+  padding-top: 7rem;
+  padding-left: 5rem;
+  padding-right: 8rem;
 }
 
+/* ******** 센터소개 ******* */
 
 .items {
   margin-top: 2rem;
+  padding: 4rem;
   height: 40rem;
   overflow-y: auto; /* 아이템이 늘어날때 스크롤바 생성 */
   background-color: #f1f0f1;
   border-radius: 20px;
+  list-style: none;
 }
+
+.item_name {
+  font-size : 1.8rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.index_ad,
+.index_t,
+.index_time,
+.index_parking {
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: underline; 
+}
+
+.item_con,
+.item_address,
+.item_tell,
+.item_parking {
+  padding-top: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.item_hour_week {
+  padding-top: 0.5rem;
+  margin-bottom: 0;
+}
+
+.item_hour_weekend {
+  margin-top: 0;
+  padding-bottom: 1rem;
+}
+
+/* *************************** */
+
 
 .card {
   margin: 1rem;
 }
+
+.card-title {
+  font-size: 1.6rem;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.card-text {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+#icon2 {
+  margin-top: 2rem;
+  margin-right: 1rem;
+  font-size: 2rem;
+}
+
+.map_ul h5 {
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.map_ul li {
+  list-style: none;
+  margin-top: 0.3rem;
+}
+

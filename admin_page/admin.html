@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntelliGym</title>
+
+    <!-- ################## CSS ################## -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="admin.css">
+
+    <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- ################## fontawesome ################## -->
+    <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+  <!-- ################## Header Start ##################-->
+  <header>
+    <!-- navbar Start -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">IntelliGym</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회사 소개</a></li>
+                <li><a class="dropdown-item" href="#">센터 소개</a></li>
+                <li><a class="dropdown-item" href="#">강사 소개</a></li>
+                <li><a class="dropdown-item" href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Program
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Personal Training</a></li>
+                <li><a class="dropdown-item" href="#">Group Exercise</a></li>
+                <li><a class="dropdown-item" href="#">Pilates</a></li>
+                <li><a class="dropdown-item" href="#">Golf Academy</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="membership.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Membership
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회원권 안내</a></li>
+                <li><a class="dropdown-item" href="#">상담 신청</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Community
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                <li><a class="dropdown-item" href="#">공지사항(FAQ)</a></li>
+                <li><a class="dropdown-item" href="#">제휴 문의</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar End -->
+  </header>
+  <!-- ################## Header End ##################-->
+
+
+
+
+
+  <!-- ################## Main Start ##################-->
+  <main>
+
+      <div class="row"> <!-- 메인 2열 col-lg-3:9 / 반응형 sm크기 시 사이드바 사라지게 -->
+        <!-- ################## Side bar start ##################-->
+        <div class="col-lg-3 d-none d-lg-block">
+          <div class="d-flex gap-5 justify-content-center" id="sidebar">
+            <ul class="list-group list-group-flush" id="menu1">
+              <p class="display-5 fw-bold">About</p>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-building"></i>
+                <a data-scroll="company" href="#company" class="dot active">회사 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-location-dot"></i>
+                <a data-scroll="center" href="#center" class="dot">센터 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-user-group"></i>
+                <a data-scroll="teacher" href="#teacher" class="dot">강사 소개</a>
+              </li>
+              <li class="list-group-item">
+                <i id="icon" class="fa-solid fa-car"></i>
+                <a data-scroll="map" href="#map" class="dot">오시는 길</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- ################## Side bar End ##################-->
+  
+  
+        <!-- ################## article start ##################-->
+        <div class="col-lg-9 col-sm-12">
+          <div class="container" id="article">
+  
+          </div>
+        </div>
+        <!-- ################## article End ##################-->
+      </div>
+  
+  </main>
+  <!-- ################## Main End ##################-->
+
+
+
+  
+
+
+  <!-- ################## Footer Start ##################-->
+  <footer>
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title my-3">Special title treatment</h5>
+        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias tempora sit sapiente et omnis recusandae? Cumque cum necessitatibus expedita nostrum, magni neque quia sint ducimus quaerat ad nihil repellendus eveniet!</p>
+        <p class="card-text mt-5">Made by IntelliGym</p>
+        <p class="card-text">
+          Copyright &copy; <script>document.write(new Date().getFullYear());</script>
+          All rights reserved. 
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- ################## Footer End ##################-->
+
+    <!-- JS -->
+    <script src="amin.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+</body>
+</html>
