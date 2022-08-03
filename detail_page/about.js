@@ -93,10 +93,15 @@ function getValue() {
 
 
 function addItem() {
-    const text = "IntelliGym "+ cmbbox.options[cmbbox.selectedIndex].text;
+    if(cmbbox.selectedIndex==0) {
+        alert('찾으실 센터를 선택해주세요.')
+    } else {
+        const text = "IntelliGym "+ cmbbox.options[cmbbox.selectedIndex].text;
 
-    const item = createItem(text);
-    items.appendChild(item);
+        const item = createItem(text);
+        items.appendChild(item);
+    }
+    
 }
 
 

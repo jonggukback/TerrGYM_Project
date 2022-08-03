@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IntelliGym</title>
+  <title>Document</title>
 
     <!-- ################## CSS ################## -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="sidebar.css">
 
     <!-- ################## Jquery ################## -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -21,10 +22,32 @@
 
 
 <body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrA0QQH5QpbtWdyVbrQB72APSQxH3cjl4",
+      authDomain: "semi-intelligym.firebaseapp.com",
+      databaseURL: "https://semi-intelligym-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "semi-intelligym",
+      storageBucket: "semi-intelligym.appspot.com",
+      messagingSenderId: "925436106266",
+      appId: "1:925436106266:web:5e064d6b621ccb9dfd63a3"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
+    
+
   <!-- ################## Header Start ##################-->
-  <header>
+  <header class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <!-- navbar Start -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">IntelliGym</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,7 +56,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle active" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About
               </a>
               <ul class="dropdown-menu">
@@ -44,7 +67,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Program
               </a>
               <ul class="dropdown-menu">
@@ -55,7 +78,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="membership.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Membership
               </a>
               <ul class="dropdown-menu">
@@ -64,7 +87,7 @@
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Community
               </a>
               <ul class="dropdown-menu">
@@ -76,81 +99,56 @@
           </ul>
         </div>
       </div>
-    </nav>
+    
     <!-- navbar End -->
   </header>
   <!-- ################## Header End ##################-->
 
 
-
-
-
-  <!-- ################## Main Start ##################-->
-  <main>
-
-      <div class="row"> <!-- 메인 2열 col-lg-3:9 / 반응형 sm크기 시 사이드바 사라지게 -->
-        <!-- ################## Side bar start ##################-->
-        <div class="col-lg-3 d-none d-lg-block">
-          <div class="d-flex gap-5 justify-content-center" id="sidebar">
-            <ul class="list-group list-group-flush" id="menu1">
-              <p class="display-5 fw-bold">About</p>
-              <li class="list-group-item">
-                <i id="icon" class="fa-solid fa-building"></i>
-                <a data-scroll="company" href="#company" class="dot active">회사 소개</a>
-              </li>
-              <li class="list-group-item">
-                <i id="icon" class="fa-solid fa-location-dot"></i>
-                <a data-scroll="center" href="#center" class="dot">센터 소개</a>
-              </li>
-              <li class="list-group-item">
-                <i id="icon" class="fa-solid fa-user-group"></i>
-                <a data-scroll="teacher" href="#teacher" class="dot">강사 소개</a>
-              </li>
-              <li class="list-group-item">
-                <i id="icon" class="fa-solid fa-car"></i>
-                <a data-scroll="map" href="#map" class="dot">오시는 길</a>
-              </li>
-            </ul>
-          </div>
+      <div class="container mt-3">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="name" id="name-new">
         </div>
-        <!-- ################## Side bar End ##################-->
-  
-  
-        <!-- ################## article start ##################-->
-        <div class="col-lg-9 col-sm-12">
-          <div class="container" id="article">
-  
-          </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="email" id="email-new">
         </div>
-        <!-- ################## article End ##################-->
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="pw" id="pw-new">
+        </div>
+        <button type="submit" class="btn btn-primary" id="register">가입하기</button>
       </div>
+      
+    
+
+  <script>
+
+    const db = firebase.firestore();
+    const storage = firebase.storage(); 
+    
+    $('#register').click(function(){
+
+      // 사용자가 input에 입력한 값 가져오기
+      const 이메일 = $('#email-new').val(); // 입력한 값은 val()!!
+      const 패스워드 = $('#pw-new').val();
+
+      firebase.auth().createUserWithEmailAndPassword(이메일, 패스워드).then((result)=>{
+        // 가입 성공 시
+        console.log(result)
+        console.log(result.user);
+      })
+    })
+
+    
+
+
+  </script>  
   
-  </main>
-  <!-- ################## Main End ##################-->
 
 
 
-  
 
 
-  <!-- ################## Footer Start ##################-->
-  <footer>
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title my-3">Special title treatment</h5>
-        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias tempora sit sapiente et omnis recusandae? Cumque cum necessitatibus expedita nostrum, magni neque quia sint ducimus quaerat ad nihil repellendus eveniet!</p>
-        <p class="card-text mt-5">Made by IntelliGym</p>
-        <p class="card-text">
-          Copyright &copy; <script>document.write(new Date().getFullYear());</script>
-          All rights reserved. 
-        </p>
-      </div>
-    </div>
-  </footer>
-  <!-- ################## Footer End ##################-->
-
-    <!-- JS -->
-    <script src="amin.js"></script>
+    <!-- ################## JavaScript ################## -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 </body>

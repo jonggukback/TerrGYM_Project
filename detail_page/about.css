@@ -2,6 +2,7 @@
 body {
   box-sizing: border-box;
   padding-top: 10rem;
+  margin-bottom: 5rem;
 }
 
 .container-fluid{
@@ -129,7 +130,13 @@ section p {
 
 
 .card {
-  margin: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.card:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
 }
 
 .card-title {

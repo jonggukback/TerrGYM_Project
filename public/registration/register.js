@@ -1,4 +1,11 @@
 
+
+
+
+
+
+/* ************ bootstrap js ************* */
+  
 /* global bootstrap: false */
 (() => {
   'use strict'
@@ -7,4 +14,7 @@
     new bootstrap.Tooltip(tooltipTriggerEl)
   })
 })()
+
+/* ****************************************** */
+
 

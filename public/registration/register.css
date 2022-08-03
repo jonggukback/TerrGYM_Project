@@ -162,4 +162,19 @@ span {
 }
 
 
+
+/* 파란색 구분선 */
+.divhr {
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#main {
+  padding-top: 3rem;
+}
+
+section h5 {
+  padding-bottom: 0.5rem;
+}
+
 /* ************************************* */

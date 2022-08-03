@@ -1,0 +1,84 @@
+
+body {
+  box-sizing: border-box;
+  padding-top: 10rem;
+}
+
+.container-fluid{
+  padding-right: 6rem;
+  padding-left: 6rem;
+}
+
+.navbar-brand {
+  font-size: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+
+.navbar-nav {
+  font-size: 1.5rem;
+}
+
+.sidebar {
+  margin-top: 5rem;
+}
+
+list-group p {
+  margin-bottom: 5rem;
+}
+
+.list-group-item {
+  font-size: 1.2rem;
+  margin-top: 1.3rem;
+}
+
+#icon {
+  margin-right: 1rem;
+}
+
+.list-group-item:hover {
+  transform: scale(1.2);
+  transition-duration: 0.3s;
+}
+
+.dot {
+  text-decoration: none;
+  color : black;
+}
+
+.sidebar .dropdown {
+  margin-top: 15rem;
+  margin-left: 2rem;
+}
+
+.sidebar span {
+  font-size: 1.5rem;
+  padding-left: 0.5rem;
+}
+
+
+/* *************************** */
+.product {
+  display: flex;
+  padding: 10px;
+}
+.thumbnail {
+  max-width: 200px;
+  width: 100%;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+.product .price {
+  font-size: 16px;
+  font-weight: 600;
+}
+.product .title {
+  font-size: 17px;
+  font-weight: 600;
+}
+.product .date {
+  color: grey;
+  font-size: 13px;
+}
+/* *************************** */

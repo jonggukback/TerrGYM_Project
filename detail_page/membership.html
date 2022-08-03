@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,42 +8,100 @@
 
     <!-- ################## CSS ################## -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="membership.css">
+
+    <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
     <!-- ################## fontawesome ################## -->
     <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
 
-</head>
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+
+  </head>
+
 <body>
   <!-- ################## Header Start ##################-->
-  <header>
+  <header class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
     <!-- navbar Start -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">IntelliGym</a>
+        <a class="navbar-brand" href="#">IntelliGym</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle disabled" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 About
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">회사 소개</a></li>
+                <li><a class="dropdown-item" href="#">센터 소개</a></li>
+                <li><a class="dropdown-item" href="#">강사 소개</a></li>
+                <li><a class="dropdown-item" href="#">오시는 길</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle disabled" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Program
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">Personal Training</a></li>
+                <li><a class="dropdown-item" href="#">Group Exercise</a></li>
+                <li><a class="dropdown-item" href="#">Pilates</a></li>
+                <li><a class="dropdown-item" href="#">Golf Academy</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
@@ -51,50 +109,185 @@
                 Membership
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">회원권 안내</a></li>
+                <li><a class="dropdown-item" href="#">상담 신청</a></li>
               </ul>
             </li>
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle disabled" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <a class="nav-link dropdown-toggle" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Community
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                <li><a class="dropdown-item" href="#">공지사항(FAQ)</a></li>
+                <li><a class="dropdown-item" href="#">제휴 문의</a></li>
               </ul>
             </li>
           </ul>
         </div>
       </div>
-    </nav>
+    
     <!-- navbar End -->
   </header>
   <!-- ################## Header End ##################-->
+
+
+
+
+  <div class="container-fluid"> <!-- container-fluid 뷰포트 100% -->
+
+    <div class="row"> <!-- col-lg-3:9 / 반응형 sm크기 시 사이드바 사라지게 -->
+      <!-- ################## Side bar start ##################-->
+      <nav class="col-lg-3 d-none d-lg-block">
+        <div class="d-flex gap-5 justify-content-center" id="sidebar">
+          <ul class="list-group list-group-flush" id="menu1">
+            <p class="display-5 fw-bold">Membership</p>
+            <li class="list-group-item">
+              <i id="icon" class="fa-solid fa-building"></i>
+              <a data-scroll="member" href="#" class="dot active">회원권 안내</a>
+            </li>
+            <li class="list-group-item">
+              <i id="icon" class="fa-solid fa-location-dot"></i>
+              <a data-scroll="request" href="#" class="dot">상담 신청</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      <!-- ################## Side bar End ##################-->
+
+
+      <!-- ################## main start ##################-->
+      <main class="col-lg-9 col-sm-12">
+        <div class="pricing-header p-3 pb-md-4 mx-auto text-center">
+          <h1 class="display-4 fw-normal">Pricing</h1>
+          <p class="fs-5 text-muted">Quickly build an effective pricing table for your potential customers with this Bootstrap example. It’s built with default Bootstrap components and utilities with little customization.</p>
+        </div>
+        
+        <section>
+          <h1 class="display-5 fw-bold">회원권 안내</h1>
+          <div class="divhr" style='background:#29b6f6; height:5px;'></div>
+
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$0<small class="text-muted fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>10 users included</li>
+                    <li>2 GB of storage</li>
+                    <li>Email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$15<small class="text-muted fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>20 users included</li>
+                    <li>10 GB of storage</li>
+                    <li>Priority email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-white bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$29<small class="text-muted fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>30 users included</li>
+                    <li>15 GB of storage</li>
+                    <li>Phone and email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+      
+          <h2 class="display-6 text-center mb-4">Compare plans</h2>
+      
+          <div class="table-responsive">
+            <table class="table text-center">
+              <thead>
+                <tr>
+                  <th style="width: 34%;"></th>
+                  <th style="width: 22%;">Free</th>
+                  <th style="width: 22%;">Pro</th>
+                  <th style="width: 22%;">Enterprise</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Public</th>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">Private</th>
+                  <td></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+              </tbody>
+      
+              <tbody>
+                <tr>
+                  <th scope="row" class="text-start">Permissions</th>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">Sharing</th>
+                  <td></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">Unlimited members</th>
+                  <td></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+                <tr>
+                  <th scope="row" class="text-start">Extra security</th>
+                  <td></td>
+                  <td></td>
+                  <td><svg class="bi" width="24" height="24"><use xlink:href="#check"/></svg></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+
+
+      </main> <!-- ################## Main End ##################-->      
+    </div> <!-- end of row 2행 -->
+  </div> <!-- end of container -->
+    
+
   
 
-  <!-- ################## Navs & Tabs Start ##################-->
-  <section class="NavsTabs">
-    <div class="container">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- ################## Navs & Tabs End ##################-->
 
 
   <!-- ################## Footer Start ##################-->
@@ -113,9 +306,10 @@
   </footer>
   <!-- ################## Footer End ##################-->
 
+
     <!-- JS -->
-    <script src="assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="membership.js"></script>
 
 </body>
 </html>
