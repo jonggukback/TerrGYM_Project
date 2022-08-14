@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+    <!-- ################## CSS ################## -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="regiUpload.css"> -->
+
+    <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- ################## fontawesome ################## -->
+    <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrA0QQH5QpbtWdyVbrQB72APSQxH3cjl4",
+      authDomain: "semi-intelligym.firebaseapp.com",
+      databaseURL: "https://semi-intelligym-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "semi-intelligym",
+      storageBucket: "semi-intelligym.appspot.com",
+      messagingSenderId: "925436106266",
+      appId: "1:925436106266:web:5e064d6b621ccb9dfd63a3"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+
+    <div class="container mt-3">
+      <div class="container mt-3">
+        <input type="text" class="form-control mt-2" id="c_num" placeholder="강의번호">
+        <input type="text" class="form-control mt-2" id="c_name" placeholder="강의명">
+        <input type="text" class="form-control mt-2" id="c_teacher" placeholder="강사명">
+        <input type="text" class="form-control mt-2" id="c_time" placeholder="강의시간">
+        <input type="text" class="form-control mt-2" id="apply" placeholder="신청인원">
+        <input type="text" class="form-control mt-2" id="limit" placeholder="제한인원">
+        <input class="form-control mt-2" type="file" id="image">
+        <button class="btn btn-danger mt-3" id="send">올리기</button>
+      </div>
+    </div>
+
+    
+
+  <script>
+
+    const db = firebase.firestore();
+    const storage = firebase.storage(); // 이미지 파일을 위한 storage
+    
+    // 이미지는 Storage에 저장 후 저장된 위치(URL)를 Database에 저장
+    // Storage에 파일 저장하기
+    $('#send').click(function(){
+
+      const file = document.querySelector('#image').files[0]; // 업로드한 파일의 첫번째 파일을 찾아줌 
+      const storageRef = storage.ref(); // 저장경로 정하는 부분 
+      /* const 저장할경로 = storageRef.child('image/' + '파일명'); */
+      const imgPath = storageRef.child('image/' + file.name); // 원래 파일명 -> file.name
+      const upload = imgPath.put(file) // 위에서 선언한 file을 넣어준다
+
+      // 이미지 업로드 성공/실패 시 코드 실행
+      // on -> 이벤트리스너
+      upload.on( 'state_changed', 
+        // 변화시 동작하는 함수 
+        null, 
+        //에러시 동작하는 함수
+        (error) => {
+          console.error('실패사유는', error);
+        }, 
+        // 성공시 동작하는 함수
+        () => {
+          // url구하는 함수문 - 그냥 문법
+          upload.snapshot.ref.getDownloadURL().then((url) => {
+            console.log('업로드된 경로는', url);
+
+            const gangnam_class = { 
+              강의번호 : parseInt($('#c_num').val()), // .val() 입력한값
+              강의명 : $('#c_name').val(),
+              강사명 : $('#c_teacher').val(),
+              강의시간 : $('#c_time').val(),
+              신청인원 : $('#apply').val(),
+              제한인원 : $('#limit').val(),
+              이미지 : url
+            }
+            // then은 성공했을 때, catch는 실패했을 때
+            db.collection('center_gangnam').add(gangnam_class).then((result)=>{
+              console.log(result);
+              /* window.location.href = "/index.html"; */
+            }).catch((err)=>{
+              console.log(err);
+            })
+          });
+        }
+    );
+
+      
+    });
+  </script>  
+  
+
+
+    <!-- ################## JavaScript ################## -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+</body>
+</html>

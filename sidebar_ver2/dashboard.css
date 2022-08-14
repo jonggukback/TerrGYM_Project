@@ -142,7 +142,13 @@ main {
   font-size: 2rem;
 }
 
-button {
+.logo {
+  width: 5px;
+  height: 5px;
+
+}
+
+#navbtn {
   margin-right: 2.5rem;
 }
 
@@ -156,9 +162,21 @@ ul li {
   font-size: 1rem;
 }
 
-/* My page 하단 패딩 */
+/* 'My page' 하단 패딩 */
 span {
   padding-bottom: 2rem;
+}
+
+
+
+/* 파란색 구분선 */
+.divhr {
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#main {
+  padding-top: 3rem;
 }
 
 

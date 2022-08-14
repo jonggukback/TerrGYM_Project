@@ -142,7 +142,13 @@ main {
   font-size: 2rem;
 }
 
-button {
+.logo {
+  width: 5px;
+  height: 5px;
+
+}
+
+#navbtn {
   margin-right: 2.5rem;
 }
 
@@ -156,25 +162,38 @@ ul li {
   font-size: 1rem;
 }
 
-/* My page 하단 패딩 */
+/* 'My page' 하단 패딩 */
 span {
   padding-bottom: 2rem;
 }
 
-
-
 /* 파란색 구분선 */
 .divhr {
   padding-top: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 #main {
-  padding-top: 3rem;
+  padding-top: 2rem;
 }
 
-section h5 {
-  padding-bottom: 0.5rem;
+.table-responsive {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 1rem;
 }
+
+/* a태그 버튼 디자인 없애기 */
+#classname {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+#disabledTextInput {
+  color: black;
+}
+
 
 /* ************************************* */
+

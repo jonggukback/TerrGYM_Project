@@ -1,0 +1,243 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+    <!-- ################## CSS ################## -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- ################## JavaScript ################## -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+
+    <!-- ###### jQuery기반의 쿠키 라이브러리 사용하기 ####### -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+    <!-- ################## fontawesome ################## -->
+    <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
+
+</head>
+
+
+
+<body>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyCrA0QQH5QpbtWdyVbrQB72APSQxH3cjl4",
+      authDomain: "semi-intelligym.firebaseapp.com",
+      databaseURL: "https://semi-intelligym-default-rtdb.asia-southeast1.firebasedatabase.app",
+      projectId: "semi-intelligym",
+      storageBucket: "semi-intelligym.appspot.com",
+      messagingSenderId: "925436106266",
+      appId: "1:925436106266:web:5e064d6b621ccb9dfd63a3"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
+
+        <!-- ################## navbar Start ##################-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                  </ul>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled">Disabled</a>
+                </li>
+              </ul>
+              <span class="mx-5 fw-semibold" id="userName"></span>
+            </div>
+          </div>
+        </nav>
+        <!-- ################## navbar End ##################-->
+
+      <div class="container mt-3">
+        <div class="mb-3">
+          <input type="text" class="form-control" placeholder="name" id="name-new">
+        </div>
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="email" id="email-new">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="pw" id="pw-new">
+        </div>
+        <div class="mb-3"> <!-- ####### 생년월일 Start ####### -->
+          <label class="form-label mt-4">출생연도</label>
+          <div class="bir_yy">
+            <span class="ps_box">
+              <input type="text" class="form-control" id="yy" placeholder="YYYY" maxlength="4">
+            </span>
+          </div>
+          <!-- <div class="bir_mm">
+            <span class="ps_box">
+              <select id="mm" class="form-select">
+                <option>월</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+              </select>
+            </span>
+          </div>
+          <div class="bir_dd">
+            <span class="ps_box">
+              <input type="text" class="form-control" id="dd" placeholder="일" maxlength="2">
+            </span>
+          </div>
+        </div> <!-- ####### 생년월일 End ####### -->
+        <div>
+          <label for="exampleSelect1" class="form-label mt-4">성별</label>
+          <select class="form-select" id="gender">
+            <option>여자</option>
+            <option>남자</option>
+          </select>
+        </div>-->
+        <button type="submit" class="btn btn-primary mt-3" id="register">가입하기</button>
+      </div>
+
+      <br>
+
+      <div class="container mt-3">
+        <div class="mb-3">
+          <input type="email" class="form-control" placeholder="email" id="email">
+        </div>
+        <div class="mb-3">
+          <input type="password" class="form-control" placeholder="pw" id="pw">
+        </div>
+        <button type="submit" class="btn btn-primary" id="login">로그인</button>
+        <button type="submit" class="btn btn-primary" id="logout">로그아웃</button>
+      </div>
+      
+      <script>
+
+        const db = firebase.firestore();
+        const storage = firebase.storage(); 
+
+        // 출생연도로 나이 구하기
+        function getAge() {
+          const birthYear = parseInt($('#yy').val());
+          const today = new Date();
+          const thisYear = today.getFullYear();
+          const age = thisYear - birthYear + 1;
+          return age;
+        }
+    
+        // 회원 가입
+        $('#register').click(function(){
+
+          // 사용자가 input에 입력한 값 가져오기
+          const email = $('#email-new').val(); // 입력한 값은 val()!!
+          const password = $('#pw-new').val();
+          const name = $('#name-new').val();
+          const age = getAge();
+          const gender = $('#gender').val();
+    
+        firebase.auth().createUserWithEmailAndPassword(email, password).then((result)=>{
+          // 가입 완료되면 user 컬렉션에 문서 생성하기. 문서id는 유저 uid로, 내용은 userInfo
+          // add 함수 사용 시 자동으로 문서 아이디가 발급되므로 -> 대신 doc을 사용하기
+          let userInfo = {
+            이름 : name,
+            이메일 : email,
+            나이 : age,
+            성별 : gender
+          }
+          db.collection('user').doc(result.user.uid).set({userInfo})
+
+          // 가입 성공 시
+          console.log(result);
+          console.log(result.user);
+          // 가입기능 업그레이드 : 이름 저장하기 (위에 선언한 변수 'name')
+          result.user.updateProfile( {displayName : name} )
+    
+          })
+        })
+    
+        // 로그인
+        $('#login').click(function(){
+          const email = $('#email').val();
+          const password= $('#pw').val();
+    
+          firebase.auth().signInWithEmailAndPassword(email, password).then((result)=>{
+            console.log(result.user);
+            window.location.href = "./register.html";
+          })
+            /// 유저의 로그인상태 확인 (로그인, 로그아웃, 새로고침 시 실행됨)
+            firebase.auth().onAuthStateChanged((user)=>{
+              if(user) {
+                // if 로그인 상태라면 출력됨, 아니면 null
+                console.log("user.uid : "+user.uid);
+                console.log("user.displayName : "+user.displayName);
+                // $('#userName').html(user.displayName) // span태그에 innerHTML 이 방법은 로딩이 오래걸림
+                //localStorage.setItem('정보이름', '값') // 불러오는 속도를 위해 localStorage에 담기
+                // '값'은 문자자료형만 가능. user는 object이므로 stringify를 통해 문자로 변환
+                if (user.displayName) {
+                  $.cookie('c_name', user.displayName)
+                  $.cookie('c_uid', user.uid)
+                  console.log($.cookie('c_name'));
+                  console.log($.cookie('c_uid'));
+
+                  let c_name = $.cookie('c_name');
+
+                  if(c_name != null) {
+                    $('#userName').html(`${c_name}님 환영합니다!`)
+                  }
+                }
+              }
+            })
+          })
+    
+        // 로그아웃
+        $('#logout').click(function(){
+          firebase.auth().signOut()
+          $.removeCookie('c_name'); // 쿠키 정보 삭제
+          location.reload(); // 새로고침
+        })
+    
+    
+      </script>
+  
+
+
+</body>
+</html>
