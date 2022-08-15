@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반마이페이지-문의사항</title>
+      <!-- ################## BOOTSTRAP ################## -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<!--       <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous"> -->
+  <!--     <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
+      crossorigin="anonymous"
+    /> -->
+      <!-- Font Awesome -->
+   <!--    <script src="https://kit.fontawesome.com/08fb45d3d6.js" crossorigin="anonymous"></script> -->
+     
+   <!-- ################## CSS ################## -->
+      <link href="./question.css" rel="stylesheet" >
+      <!-- ################## Jquery ################## -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!-- ################## JS ################## -->
+      <script src="./question.js" type="module" defer></script>
+      <!-- Custom styles for this template -->
+     <!--  <link href="sidebars.css" rel="stylesheet"> -->
+
+
+</head>
+
+<body>
+<!--==========================firebase 시작=====================================-->
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+    
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDegzcOZjxNyw-GY8ATv97gEjHaKFs6HEQ",
+          authDomain: "semi-project-7a423.firebaseapp.com",
+          databaseURL: "https://semi-project-7a423-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "semi-project-7a423",
+          storageBucket: "semi-project-7a423.appspot.com",
+          messagingSenderId: "660861448017",
+          appId: "1:660861448017:web:640334735d21f4977bed70"
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+<!--==========================firebase 끝=====================================-->
+
+
+<!-- ====== 페이징처리 시작 ====== -->
+
+<!-- 페이징처리 끝 -->
+
+
+<!-- ################## Header Start ##################-->
+<header>
+    <!-- navbar Start -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark" id="navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">IntelliGym</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="about.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회사 소개</a></li>
+                <li><a class="dropdown-item" href="#">센터 소개</a></li>
+                <li><a class="dropdown-item" href="#">강사 소개</a></li>
+                <li><a class="dropdown-item" href="#">오시는 길</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="program.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Program
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Personal Training</a></li>
+                <li><a class="dropdown-item" href="#">Group Exercise</a></li>
+                <li><a class="dropdown-item" href="#">Pilates</a></li>
+                <li><a class="dropdown-item" href="#">Golf Academy</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="membership.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Membership
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">회원권 안내</a></li>
+                <li><a class="dropdown-item" href="#">상담 신청</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="community.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Community
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">1:1 문의</a></li>
+                <li><a class="dropdown-item" href="#">공지사항(FAQ)</a></li>
+                <li><a class="dropdown-item" href="#">제휴 문의</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- navbar End -->
+  </header>
+  
+  <!-- ################## Header End ##################-->
+  
+  <div class="container"></div>
+
+
+
+
+
+  <!--========================== side 바 시작 =====================================-->
+  
+  <main class="d-flex flex-nowrap  pt-5"  id="side-bar" >
+    <h1 class="visually-hidden">Sidebars examples</h1>
+  
+
+   <!--  <div class="b-example-divider b-example-vr"></div> -->
+  
+    <div class="d-flex flex-column flex-shrink-0 p-3 bg-light text-decoration-none" style="width: 280px;">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <svg class="bi pe-none me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
+        <span class="fs-5 fw-semibold">My Page</span>
+      </a>
+      <hr>
+
+      <ul class="nav nav-pills flex-column mb-auto">
+
+        <li class="nav-item">
+            <!-- <a href="#" class="nav-link link-dark"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#info-collapse" aria-controls="info-collapse">개인정보</button>
+              <ul class="list-unstyled ps-3 collapse" id="info-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">회원정보변경</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">회원탈퇴신청</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+           <!--  <a href="#" class="nav-link link-dark"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#forms-collapse" aria-controls="forms-collapse">1:1 문의내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="forms-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">내 게시글 보기</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">카카오톡 문의</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">1:1게시판</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+        
+        <li class="nav-item">
+            <!-- <a href="#" class="nav-link link-dark"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#components-collapse" aria-controls="components-collapse">수강내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="components-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">Typography</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <!-- <a href="#" class="nav-link link-dark text-decoration-none"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#payment-collapse" aria-controls="payment-collapse">결재내역</button>
+              <ul class="list-unstyled ps-3 collapse" id="payment-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">Typography</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">Images</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">Tables</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#figures">Figures</a></li>
+              </ul>
+            </a>
+        </li>
+
+        <li class="nav-item">
+           <!--  <a href="#" class="nav-link link-dark"> -->
+            <button class="btn d-inline-flex align-items-center collapsed border-0" data-bs-toggle="collapse" aria-expanded="false" data-bs-target="#inbody-collapse" aria-controls="inbody-collapse">인바디정보</button>
+              <ul class="list-unstyled ps-3 collapse" id="inbody-collapse">
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#typography">신체정보</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#images">인바디현황</a></li>
+                <li><a class="d-inline-flex align-items-center rounded text-decoration-none" href="#tables">운동현황</a></li>
+              </ul>
+            </a>
+        </li>
+
+      </ul>
+      <hr>
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="data:image/jpeg;base64,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" alt="" width="32" height="32" class="rounded-circle me-2">
+          <strong>ㄱㄷㅇ</strong>
+        </a>
+        <!-- 왼쪽 하단 시작 ___ 없애도 될듯 이상해 -->
+        <ul class="dropdown-menu text-small shadow">
+          <li><a class="dropdown-item" href="#">New project...</a></li>
+          <li><a class="dropdown-item" href="#">Settings</a></li>
+          <li><a class="dropdown-item" href="#">Profile</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+      </div> 
+      <!-- 왼쪽 하단 끝 -->
+    </div>
+    </div>
+    
+    <!--======================= side 바 끝 =====================================-->
+
+    
+
+
+<!-- =========================== 나의 문의 시작======================================== -->
+
+<div id="questionmain"></div>
+   <!-- QUESTION -->
+   <div class="container w-100 mt-5">
+<h4 class="pb-2 question-bottom"><strong>나의 문의</strong></h4>
+
+<table class="table">
+  <thead class="table-dark">
+    <tr>
+      <th class="col-1">#</th>
+      <th class="col-3">제목</th>
+      <!-- <th class="col-3">내용</th> -->
+      <th class="col-3">유형</th>
+      <th class="col-3">작성일</td>
+      </tr>
+    </thead>
+    <tbody id="question_content" class="question_content"></tbody>
+  </table>
+  
+  
+  
+  <form class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <input class="form-control me-8 w-50 d-md-flex justify-content-center" type="search" placeholder="Search" aria-label="Search">
+    <div><button id="upload" type="button" class="btn btn-outline-secondary" onclick="location.href='questionUpload.html'">등록하기</button></div>
+  </form>
+  
+
+      <!-- 페이지 네이션 처리 시작-->
+      <hr/>
+  <br>
+      <table align="center">
+        <tbody class="pagination"></tbody>
+      </table>
+      <!-- 페이지 네이션 처리 끝-->
+
+
+
+    </div>
+  <!-- QUESTION -->
+ <!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+    <!-- QUESTION list-->
+
+
+    <!-- QUESTION list-->
+
+
+<!-- =========================== 나의 문의 끝======================================== -->
+
+
+
+</div>
+</main>
+
+
+<!-- <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+<!-- <script src="dashboard.js"></script> -->
+<!-- <script src="/docs/5.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script> -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+</body>
+</html>

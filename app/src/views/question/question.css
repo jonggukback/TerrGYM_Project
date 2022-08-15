@@ -1,0 +1,20 @@
+* {
+   /*  border: 1px solid salmon; */
+}
+
+
+a{
+    text-decoration: none;
+    color: black;
+  }
+  
+  .question-list {
+    margin: 20px 0px;
+  }
+  
+  .modal-title{
+    color: #fff;
+    background-color: rgb(156, 151, 151);
+    margin: 4px;
+    padding: 6px 12px;
+  }
