@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.98.0">
-    <title>IntelliGym 수강신규등록</title>
+    <title>IntelliGym 수강신청현황</title>
 
     <!-- ################## CSS ################## -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
@@ -72,6 +72,17 @@
         white-space: nowrap;
         -webkit-overflow-scrolling: touch;
       }
+
+      .card:hover {
+        cursor: pointer;
+        background-color: #b3e5fc;
+      }
+
+      .head:hover {
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      
     </style>
 
   </head>
@@ -188,124 +199,149 @@
 
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
-          <form>
-            <div class="container w-50 p-3" >
-              <h2 class="fw-bold justify-content-center">&nbsp;신규 강의 등록</h2>
-              <div class="divhr" style='background:#03a9f4; height:5px; width:750px;'></div>
-              
-              <div class="mb-3 pt-3">
-                <label class="form-label">강의분류</label>
-                <input type="text" class="form-control" id="c_num">
-                <div class="form-text">필라테스 | 요가 | 줌바 | 스피닝</div>
-              </div>
-              <div class="mb-3">
-                <label class="form-label">강의번호</label>
-                <input type="text" class="form-control" id="c_num">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">강의명</label>
-                <input type="text" class="form-control" id="c_name">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">강사명</label>
-                <input type="text" class="form-control" id="c_teacher">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">강의시간</label>
-                <input type="text" class="form-control" id="c_time">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">신청인원</label>
-                <input type="text" class="form-control" id="apply">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">제한인원</label>
-                <input type="text" class="form-control" id="limit">
-              </div>
-              <div class="mb-3">
-                <label class="form-label">이미지</label>
-                <input class="form-control" type="file" id="image">
-              </div>
-              <div class="d-grid gap-2 col-6 mx-auto mt-4">
-                <button id="send" class="btn btn-primary btn-lg" type="button">
-                  수강등록
-                </button>
-              </div>
-          </form>
-          
+        <div class="ms-5 mt-2 pb-3">
+          <h2 class="fw-bold">&nbsp;수강 신청 현황</h2>
+          <div class="divhr" style='background:#03a9f4; height:5px; width:250px;'></div>
+        </div>
+        
+        <div class="row">
+          <section class="col-lg-2 d-none d-lg-block mt-5">
 
-        </div> <!-- end of div.container -->
+            <div class="card mt-2 text-center border-dark" style="max-width: 18rem;">
+              <div class="card-header">강의분류 1</div>
+              <div class="card-body">
+                <h4 class="card-title fw-bold">필라테스</h4>
+              </div>
+            </div>
+            <div class="card mt-2 text-center border-dark" style="max-width: 18rem;">
+              <div class="card-header">강의분류 2</div>
+              <div class="card-body">
+                <h4 class="card-title fw-bold">요가</h4>
+              </div>
+            </div>
+            <div class="card mt-2 text-center border-dark" style="max-width: 18rem;">
+              <div class="card-header">강의분류 3</div>
+              <div class="card-body">
+                <h4 class="card-title fw-bold">줌바</h4>
+              </div>
+            </div>
+            <div class="card mt-2 text-center border-dark" style="max-width: 18rem;">
+              <div class="card-header">강의분류 4</div>
+              <div class="card-body">
+                <h4 class="card-title fw-bold border-dark">스피닝</h4>
+              </div>
+            </div> 
+
+          </section>
+
+          <section class="col-sm-12 col-lg-10">
+            <form class="row g-3 justify-content-end pe-5">
+              <div class="col-auto">
+                <label for="inputPassword2" class="visually-hidden">강의번호 검색</label>
+                <input class="form-control" id="inputNum" placeholder="강의번호 검색">
+              </div>
+              <div class="col-auto">
+                <button id="search" type="submit" class="btn btn-primary mb-3">search</button>
+              </div>
+              <div class="col-auto dropdown ms-5">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Export File
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Excel</a></li>
+                  <li><a class="dropdown-item" href="#">Word</a></li>
+                  <li><a class="dropdown-item" href="#">PDF</a></li>
+                </ul>
+              </div>
+            </form>
+
+            <div class="table-responsive m-4 mt-1" style="height: 550px;">
+              <table class="table table-light table-bordered border-dark table-hover" id="table">
+                <thead>
+                  <tr class="table-primary border-dark">
+                    <th class="head" scope="col">구분</th>
+                    <th class="head" scope="col">강의번호</th>
+                    <th class="head" scope="col" colspan="3" >강의명</th>
+                    <th class="head" scope="col">강의시간</th>
+                    <th class="head" scope="col">회원이름</th>
+                    <th class="head" scope="col">회원성별</th>
+                    <th class="head" scope="col">회원나이</th>
+                  </tr>
+                </thead>
+                <tbody class="class-content">
+                  
+                </tbody>
+              </table>
+            </div><!-- end of div.table-responsive -->
+          </section>
+        </div> <!-- end of div.row -->
       </main>
+
     </div> <!-- end of div.row -->
   </div> <!-- end of div.container -->
 
-    
 
-    
+
 
   <script>
 
     const db = firebase.firestore();
-    const storage = firebase.storage(); // 이미지 파일을 위한 storage
+    const storage = firebase.storage();
     
-    // 이미지는 Storage에 저장 후 저장된 위치(URL)를 Database에 저장
-    // Storage에 파일 저장하기
-    $('#send').click(function(){
+    let classType;
+    let num = 0;
 
-      const file = document.querySelector('#image').files[0]; // 업로드한 파일의 첫번째 파일을 찾아줌 
-      const storageRef = storage.ref(); // 저장경로 정하는 부분 
-      const imgPath = storageRef.child('image/' + file); 
-      const upload = imgPath.put(file) // 위에서 선언한 file을 넣어준다
+    $('.card').click(function(e){
+      classType = $(this).find('.card-title').text()
+      console.log(classType);
 
-      // 이미지 업로드 성공/실패 시 코드 실행
-      upload.on( 'state_changed', 
-        // 변화시 동작하는 함수 
-        null, 
-        //에러시 동작하는 함수
-        (error) => {
-          console.error('실패사유는', error);
-        }, 
-        // 성공시 동작하는 함수
-        () => {
-          // url구하는 함수문 - 그냥 문법
-          upload.snapshot.ref.getDownloadURL().then((url) => {
-            console.log('url', url);
+      e.stopImmediatePropagation(); // 이벤트 버블링 현상 방지
 
-            const gangnam_class = { 
-              강의번호 : parseInt($('#c_num').val()), // .val() 입력한값
-              강의명 : $('#c_name').val(),
-              강사명 : $('#c_teacher').val(),
-              강의시간 : $('#c_time').val(),
-              신청인원 : $('#apply').val(),
-              제한인원 : $('#limit').val(),
-              이미지 : url
+      db.collection('myclass').where('강의분류', '==', classType).onSnapshot((result)=>{
+        $('.class-content').html('') // 테이블 빈화면으로 초기화
+        num = 0; // 구분번호 초기화
+        result.forEach((a)=>{
+          console.log(a.data());
+          const template = `
+                  <tr>
+                    <td>${++num}</td>
+                    <td>${a.data().강의번호}</td>
+                    <td colspan="3">${a.data().강의명}</td>
+                    <td>${a.data().강의시간}</td>
+                    <td>${a.data().이름}</td>
+                    <td>${a.data().성별}</td>
+                    <td>${a.data().나이}</td>
+                  </tr>
+                  `;
+          $('.class-content').append(template);
+        })
+      })
+    })
+
+
+
+    /// 유저의 로그인상태 확인 (로그인, 로그아웃, 새로고침 시 실행됨)
+    firebase.auth().onAuthStateChanged((user)=>{
+        if(user) {
+          // if 로그인 상태라면 출력됨, 아니면 null
+          console.log("user.uid : "+user.uid);
+          console.log("user.displayName : "+user.displayName);
+          // $('#userName').html(user.displayName) // span태그에 innerHTML 이 방법은 로딩이 오래걸림
+          //localStorage.setItem('정보이름', '값') // 불러오는 속도를 위해 localStorage에 담기
+          // '값'은 문자자료형만 가능. user는 object이므로 stringify를 통해 문자로 변환
+          if (user.displayName) {
+            $.cookie('c_name', user.displayName)
+            console.log($.cookie('c_name'));
+
+            let c_name = $.cookie('c_name')
+
+            if(c_name != null) {
+              $('#userName').html(`${c_name}님 환영합니다!`)
             }
-
-            // yes, no 확인창
-            if(gangnam_class) {
-                if(confirm("강의를 등록하시겠습니까?")) {
-                    // yes
-                    // then은 성공했을 때, catch는 실패했을 때
-                    db.collection('center_gangnam').add(gangnam_class).then((result)=>{
-                      console.log(result);
-                      /* window.location.href = "/index.html"; */
-                    }).catch((err)=>{
-                      console.log(err);
-                    })
-                } else {
-                    // no
-                    console.log("cancelled");
-                }
-              }
-              else {
-                alert("내용을 입력해 주세요.");
-              }
-          });
+          }
         }
-    );
+      })
 
-      
-    });
   </script>  
   
 

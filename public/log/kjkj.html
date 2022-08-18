@@ -137,3 +137,16 @@ ${result.data().강의명}
         })
         })
       })
+
+
+      function countData(obj) {
+      db.collection('myclass').where("강의명", "==", obj).get().then((result)=>{
+      result.forEach((doc)=>{
+        console.log(doc.data());
+        const json = JSON.stringify(doc.data())
+        console.log("length :"+json.length);
+        const count = json.length;
+        return count;
+      })
+    })
+  }

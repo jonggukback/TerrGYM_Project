@@ -64,10 +64,14 @@
 
     const myuid = $.cookie('c_uid') // 쿠키에서 uid 가져오기
     const c_name = $.cookie('c_name'); // 쿠키에서 이름 가져오기
+    let gender;
+    let age;
 
     function addClass() {
       alert('수강신청이 완료되었습니다! 수강내역에서 확인해 주세요.');
     }
+
+    
 
     $(document).ready(function () {
       let queryString = new URLSearchParams(document.location.search)
@@ -84,6 +88,7 @@
           classnum = result.data().강의번호
           teacher = result.data().강사명
           classtime = result.data().강의시간
+          classtype = result.data().강의분류
           $(".img-thumbnail").attr("src", classimage)
           $(".classname").text(classname)
           $(".classnum").text(classnum)
@@ -92,13 +97,21 @@
         })
       })
 
-      
+      db.collection('user').doc(myuid).get().then((result)=>{
+        console.log(result.data());
+        let data = result.data().userInfo
+        gender = data.성별
+        age = data.나이
+      })
 
       // 신청하기 버튼 클릭 시 이벤트
       $('#regi_btn').click(function() {
         let data = {
           이름 : c_name,
+          성별 : gender,
+          나이 : age,
           강의명 : classname,
+          강의분류 : classtype,
           강의번호 : classnum,
           강사명 : teacher, 
           강의시간 : classtime,
