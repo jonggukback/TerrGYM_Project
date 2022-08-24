@@ -1,5 +1,7 @@
 "use strict";
 
+import  path from 'path';
+
 /*============== express 사용 ==============*/
 import express from "express";
 import { config } from './src/config/config.js';
@@ -10,7 +12,7 @@ import { router } from './src/routes/router.js';
 app.use('/', router);
 
 /*============== views 엔진 세팅 ==============*/
-app.set('views','./src/views/');
+app.set('views', './src/views/');
 app.set('view engine', 'ejs');
 app.use(express.static('./src/views'));
 

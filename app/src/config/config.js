@@ -7,7 +7,6 @@ dotenv.config();
 const {
     PORT,
     HOST,
-    HOST_URL,
     API_KEY,
     AUTH_DOMAIN,
     DATABASE_URL,
@@ -21,7 +20,7 @@ const {
 export const config = {
     port : PORT,
     host : HOST,
-    url : HOST_URL,
+    url : `http://${HOST}:${PORT}`,
     firebaseConfig : {
         apiKey: API_KEY,
         authDomain: AUTH_DOMAIN,

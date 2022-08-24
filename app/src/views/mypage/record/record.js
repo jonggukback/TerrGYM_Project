@@ -8,7 +8,7 @@ window.onload = ()=>{
     .then((res)=>{
         if (res.success) {
             console.log(res.list);
-
+            list = res.list;
             drawchart_line(res.list);
             drawchart_inbody(res.list);
             drawchart_bar(res.list);
@@ -32,7 +32,16 @@ const insert = document.querySelector('#insert'),
     BMI = document.querySelector('#BMI'),
     Exercise = document.querySelector('#Exercise'),
     Exercisetime = document.querySelector('#Exercisetime'),
-    tbody = document.querySelector('#tbody');
+    tbody = document.querySelector('#tbody'),
+    modaldata1 = document.querySelector('#modaldata1'),
+    modaldata2 = document.querySelector('#modaldata2'),
+    modaldata3 = document.querySelector('#modaldata3'),
+    modaldata4 = document.querySelector('#modaldata4'),
+    modaldata5 = document.querySelector('#modaldata5'),
+    modaldata6 = document.querySelector('#modaldata6'),
+    modaldata7 = document.querySelector('#modaldata7');
+
+let list;
 
 insert.addEventListener('click', ()=>{
     req = {
@@ -89,7 +98,15 @@ tbody.addEventListener( 'click', (e)=>{
 
     }else if(id === 'detail'){
         console.log('상세보기 버튼');
-
+        console.log(list[date]);
+        const modalList = list[date];
+        modaldata1.innerText = modalList.날짜;
+        modaldata2.innerText = modalList.오늘의운동;
+        modaldata3.innerText = modalList.운동시간;
+        modaldata4.innerText = modalList.체중;
+        modaldata5.innerText = modalList.체지방량;
+        modaldata6.innerText = modalList.골격근량;
+        modaldata7.innerText = modalList.BMI;
     }
 });
 
@@ -112,15 +129,18 @@ function addRow(list){
     td_btn1.appendChild(button1);
     button1.innerHTML = '상세보기'
     button1.setAttribute('type','button');
-    button1.setAttribute('class','btn btn-primary');
+    button1.setAttribute('class','btn btn-primary btn-sm');
     button1.setAttribute('id','detail');
+    button1.setAttribute('data-date', date.replace(/\-/g, ''));
+    button1.setAttribute('data-bs-toggle','modal');
+    button1.setAttribute('data-bs-target','#exampleModal2');
 
     const td_btn2 = document.createElement('td');
     const button2 = document.createElement('button');
     td_btn2.appendChild(button2);
     button2.innerHTML = '삭제'
     button2.setAttribute('type','button');
-    button2.setAttribute('class','btn btn-danger');
+    button2.setAttribute('class','btn btn-danger btn-sm');
     button2.setAttribute('id', 'delete');
     button2.setAttribute('data-date', date.replace(/\-/g, ''));
 

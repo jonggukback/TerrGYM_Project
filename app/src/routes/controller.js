@@ -20,8 +20,11 @@ const render = {
     record: (req,res)=>{
         res.render('mypage/record/record');
     },
+    recordall: (req,res)=> {
+        res.render('/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/record/recordall.ejs');
+    },
     detail: (req,res)=>{
-        res.render('home/detail_page/about')
+        res.render('home/detail_page/about');
     },
     register: (req,res)=>{
         res.render('mypage/registration/register');
@@ -56,8 +59,8 @@ const user = {
         const user = new User();
         const respones = user.islogin();
         const uid = respones.uid;
-        const profile = await user.profile(respones.uid);
-        respones.profile = profile;
+        // const profile = await user.profile(respones.uid);
+        // respones.profile = profile;
         return res.json(respones);
     },
     logout : async (req,res)=>{
@@ -72,9 +75,35 @@ const user = {
         console.log(respones);
         return res.json(respones);
     },
+    memberprofile: async (req,res) => {
+        const user = new User(req.body);
+        const islogin = user.islogin();
+        const uid = islogin.uid;
+
+        if (islogin.success){
+            // const respones = await record.getList(islogin.uid);
+            const response = await user.profile(uid);
+            return res.json(response);
+        } else {
+            return res.json(islogin);
+        }
+    }
 }
 
 const record = {
+    getlistall : async (req, res) => {
+        const record = new Record(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await record.getList(islogin.uid);
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+
     getlist : async (req, res) => {
         const record = new Record(req.body);
         const user = new User();

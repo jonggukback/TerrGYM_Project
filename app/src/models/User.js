@@ -31,16 +31,14 @@ class User {
     }
     
     async profile(uid){
-        if (!uid){
-            return { profile : '로그인 상태가 아닙니다.'};
-        }
         const docRef = doc(db, "member", uid);
         const docSnap = await getDoc(docRef);
+
         if (docSnap.exists()) {
-            return { profile : docSnap.data() };
+            return { success:true, profile : docSnap.data() };
         } else {
             console.log("No such document!");
-            return { profile : '불러오기를 실패 했습니다.'};
+            return { success:false, msg : '불러오기를 실패 했습니다.'};
         }
     }
 

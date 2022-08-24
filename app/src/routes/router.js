@@ -32,6 +32,8 @@ router.post('/islogin',user.islogin);
 router.post('/logout',user.logout);
 
 router.get('/mypage/record',render.record);
+router.get('/mypage/recordall',render.recordall);
+router.post('/mypage/record/getlistall',record.getlistall);
 router.post('/mypage/record/getlist',record.getlist);
 router.post('/mypage/record/setlist',record.setlist);
 router.post('/mypage/record/deleteRow',record.deleterow);
@@ -42,6 +44,7 @@ router.get('/mypage/question/questionUpload',render.questionUpload);
 
 router.get('/mypage/member',render.memberpage);
 
+router.post('/mypage/member/getprofile',user.memberprofile);
 /*============== 로그인 요청 ==============*/
 router.get('/login',render.login);
 router.post('/login',user.login);

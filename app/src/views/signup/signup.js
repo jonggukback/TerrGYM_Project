@@ -5,6 +5,7 @@ const email = document.querySelector('#email'),
     gender = document.querySelector('#gender'),
     address = document.querySelector('#address'),
     address2 = document.querySelector('#detail_address'),
+    phone = document.querySelector('#phone'),
     btn = document.querySelector('#signinbtn');
 
 btn.addEventListener('click',()=>{
@@ -17,6 +18,7 @@ btn.addEventListener('click',()=>{
         gender: gender.options[gender.selectedIndex].text,
         address: address.value,
         address2: address2.value,
+        phone: phone.value,
     }
 
     console.log(req);

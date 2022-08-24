@@ -14,6 +14,25 @@ class Record {
         this.body = body
     }
 
+    async getlistall(UID){
+
+        const docData = new Map();
+        
+        const q = query(collection(db, UID), orderBy("날짜", "desc"));
+        const querySnapshot = await getDocs(q);
+        querySnapshot.forEach((doc) => {
+            docData.set(doc.id, doc.data());
+        });
+
+        const list = Object.fromEntries(docData.entries());
+
+        if (!list){
+            return { success:false, list: null, msg:'데이터 조회 실패' }
+        }else{
+            return { success:true, list : list , msg:'데이터 조회 성공'}
+        }
+    }
+
     async getList(UID){
 
         const docData = new Map();
