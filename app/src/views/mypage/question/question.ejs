@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>일반마이페이지-문의사항</title>
+      <!-- ################## BOOTSTRAP ################## -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+   <!-- ################## CSS ################## -->
+      <link href="/mypage/question/question.css" rel="stylesheet" >
+      <!-- ################## Jquery ################## -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+      <!-- ################## JS ################## -->
+      <script src="/mypage/question/question.js" type="module" defer></script>
+
+
+</head>
+
+<body>
+<!--==========================firebase 시작=====================================-->
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+
+
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDync9al_o87hKg744E6_AX3WDVJQ1PCM0",
+          authDomain: "testlogin-e3edb.firebaseapp.com",
+          databaseURL: "https://testlogin-e3edb-default-rtdb.firebaseio.com",
+          projectId: "testlogin-e3edb",
+          storageBucket: "testlogin-e3edb.appspot.com",
+          messagingSenderId: "793640808427",
+          appId: "1:793640808427:web:ad4c4722e28e6822ab33ae",
+          measurementId: "G-8CZSZ9B0BF"
+        };
+        firebase.initializeApp(firebaseConfig);
+      </script>
+<!--==========================firebase 끝=====================================-->
+
+
+    <!-- ################## navbar Start ##################-->
+    <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/nav.ejs") %>
+    <!-- ################## navbar End ##################-->
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- ######################## side bar ######################################### -->
+        <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/side.ejs") %>
+        <!-- ########################## end of side bar ######################################### -->
+
+
+
+
+        
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4" id="main">
+          <div class="container">
+
+            <h1 class="display-7 fw-bold">나의 문의내역 </h1>
+            <div class="divhr" style='background:#03a9f4; height:5px; width:100%;'></div>
+            
+            <section>
+              <!-- =========================== 나의 문의 시작======================================== -->
+
+<div id="questionmain"></div>
+<!-- QUESTION -->
+<div class="container w-100 mt-5">
+<h4 class="pb-2 question-bottom"><strong>문의내역</strong></h4>
+
+<table class="table">
+<thead class="table-info fs-5">
+ <tr>
+   <th class="col-1s">#</th>
+   <th class="col-3">제목</th>
+   <!-- <th class="col-3">내용</th> -->
+   <th class="col-3">유형</th>
+   <th class="col-3">작성일</td>
+   </tr>
+ </thead>
+ <tbody id="question_content" class="question_content"></tbody>
+</table>
+
+
+<form class="d-grid gap-2 d-md-flex justify-content-md-end">
+ <input class="form-control me-8 w-50 d-md-flex justify-content-center" type="search" placeholder="Search" aria-label="Search">
+ <div><button id="upload" type="button" class="btn btn-outline-secondary">등록하기</button></div>
+</form>
+
+
+   <!-- 페이지 네이션 처리 시작-->
+   <hr/>
+<br>
+   <table align="center">
+     <tbody class="pagination"></tbody>
+   </table>
+   <!-- 페이지 네이션 처리 끝-->
+
+
+
+ </div>
+<!-- QUESTION -->
+<!--  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+
+
+
+
+<!-- =========================== 나의 문의 끝======================================== -->
+            </section>
+
+          </div> <!-- end of div.container -->
+        </main>
+      </div> <!-- end of div.row -->
+    </div> <!-- end of div.container -->
+
+  </body>
+
+
+<script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js" integrity="sha384-uO3SXW5IuS1ZpFPKugNNWqTZRRglnUJK6UAZ/gxOX80nxEkN9NcGZTftn6RzhGWE" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+</body>
+</html>

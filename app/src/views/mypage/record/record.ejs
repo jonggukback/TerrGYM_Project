@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    <script src="/mypage/record/record.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            /* background-color: black;
+            color: white; */
+            /* border: 1px solid gray; */
+        }
+
+        .chart-container1{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-top: 140px;
+            width: 100%;
+            height: auto;
+        }
+        .chart-container2{
+            border: 1px solid black;
+            border-radius: 10px;
+            margin: auto;
+            margin-top: 100px;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+      <!-- ################## navbar Start ##################-->
+      <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/nav.ejs") %>
+      <!-- ################## navbar End ##################-->
+  
+      <div class="container-fluid">
+        <div class="row">
+          <!-- ######################## side bar ######################################### -->
+          <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/side.ejs") %>
+          <!-- ########################## end of side bar ######################################### -->
+
+          <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 d-flex flex-column" id="main">
+            <div class="container">
+                <h1 class="display-7 fw-bold">나의 운동일지</h1>
+                <div class="divhr" style='background:#03a9f4; height: 0.2em; width:100%;'></div>
+            </div>
+            <div class="col-12 d-flex">
+
+
+                <div class="col-6 mb-5">
+                    <canvas id="line-chart"></canvas>
+                </div>
+                <div class="col-6 mb-5">
+                    <canvas id="bar-chart"></canvas>
+                </div>
+
+
+            </div>
+
+            <div class="col-12 d-flex justify-content-between">
+
+                <div class="col-4" style="margin-left: 80px;">
+                    <canvas class="mt-5" id="doughnut-chart"></canvas>
+                </div>
+
+                <table class="table table-striped w-50">
+                    <thead>
+                        <tr>
+                            <th style="text-align:center;">날짜</th>
+                            <th style="text-align:center;">운동</th>
+                            <th colspan="2" style="text-align:center;">
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                    입력하기
+                                </button>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody"></tbody>
+                </table>
+
+
+            </div>
+          </main>
+
+            <!-- Button trigger modal -->
+        </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Today's record</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                    <div class="d-flex mb-4">
+                        <label class="form-label col-2">날짜</label>
+                        <input type="date" class="form-control w-75" style="height: 30px;" id="date">
+                    </div>
+
+                    <div class="d-flex mb-4">
+                        <label class="form-label col-2">체중</label>
+                        <input type="text" class="form-control w-75" style="height: 30px;" id="kg" placeholder="kg">
+                    </div>
+                    <div class="d-flex mb-4">
+                        <label class="form-label col-2">체지방량</label>
+                        <input type="text" class="form-control w-75" style="height: 30px;" id="bodyfatpercent" placeholder="kg">
+                    </div>
+                    <div class="d-flex mb-4">
+                        <label class="form-label col-2">골격근량</label>
+                        <input type="text" class="form-control w-75" style="height: 30px;" id="skeletalmusclemass" placeholder="kg">
+                    </div>
+                    <div class="d-flex mb-4">
+                        <label class="form-label col-2">BMI</label>
+                        <input type="text" class="form-control w-75" style="height: 30px;" id="BMI" placeholder="kg/m">
+                    </div>
+                    <div class="d-flex w-100 mb-4 justify-content-between">
+                        <div class="d-flex col-6">
+                            <label class="form-label col-6">오늘의 운동</label>
+                            <select name="cars" id="Exercise">
+                                <option value="헬스:PT">헬스:PT</option>
+                                <option value="헬스:GX">헬스:GX</option>
+                                <option value="필라테스">필라테스</option>
+                                <option value="스피닝">스피닝</option>
+                            </select>
+                        </div>
+                        <div class="d-flex col-6">
+                            <label class="form-label col-6">운동 시간</label>
+                            <input type="number" class="form-control w-25" style="height: 30px;" id="Exercisetime" placeholder="hour">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">닫기</button>
+                        <button id="insert" type="button" class="btn btn-primary">입력하기</button>
+                    </div>
+            </div>
+        </div>
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>

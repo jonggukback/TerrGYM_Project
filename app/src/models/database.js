@@ -15,16 +15,6 @@ class Record {
     }
 
     async getList(UID){
-        // const citiesRef = collection(db, "record");
-        // const docRef = doc(citiesRef, UID);
-        // const docSnap = await getDoc(docRef);
-
-        // if (docSnap.exists()) {
-        //     const list = docSnap.data();
-        //     return { success:true, list : list , msg:'데이터 조회 성공'}
-        // } else {
-        //     return { success:false, list: null, msg:'데이터 조회 실패' }
-        // }
 
         const docData = new Map();
         

@@ -2,8 +2,12 @@
 
 import { User } from '../models/User.js';
 import { Record } from '../models/database.js';
+import { Register } from '../models/registerdata.js'
 
 const render = {
+    home : (req,res)=>{
+        res.render('home/main');
+    },
     login : (req,res)=>{
         res.render('login/login');
     },
@@ -14,7 +18,31 @@ const render = {
         res.render('mypage/mypage');
     },
     record: (req,res)=>{
-        res.render('record/record');
+        res.render('mypage/record/record');
+    },
+    detail: (req,res)=>{
+        res.render('home/detail_page/about')
+    },
+    register: (req,res)=>{
+        res.render('mypage/registration/register');
+    },
+    regiList: (req,res)=>{
+        res.render('mypage/registration/regiList');
+    },
+    regiDetail: (req,res)=>{
+        res.render('mypage/registration/regiDetail');
+    },
+    question: (req,res)=>{
+        res.render('mypage/question/question');
+    },
+    questionmodal: (req,res)=>{
+        res.render('mypage/question/questionmodal');
+    },
+    questionUpload: (req,res) =>{
+        res.render('/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/question/questionUpload');
+    },  
+    memberpage: (req,res) => {
+        res.render('/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/member/profile.ejs');
     }
 }
 
@@ -84,4 +112,67 @@ const record = {
         }
     }
 }
-export {render, user, record};
+
+const registerdata = {
+
+    deleteList: async (req, res) => {
+        const user = new User();
+        const islogin = user.islogin();
+        const register = new Register(req.body);
+
+        if (islogin.success){
+            const respones = await register.deleteList();
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+
+    getlist2 : async (req, res) => {
+        const register = new Register(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await register.getList2(islogin.uid);
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+    
+    getlist : async (req, res) => {
+        const register = new Register(req.body);
+        const user = new User();
+        const islogin = user.islogin();
+
+        if (islogin.success){
+            const respones = await register.getList();
+            return res.json(respones);
+        } else {
+            return res.json(islogin);
+        }
+    },
+    setlist : async (req, res) => {
+        const request = req.body;
+
+        const user = new User();
+        const islogin = user.islogin();
+
+        const profile = await user.profile(islogin.uid)
+
+        request.이름 = profile.profile.name;
+        request.성별 = profile.profile.gender;
+        request.UID = islogin.uid;
+
+        const register = new Register(request);
+        register.register();
+
+        res.send(`<script type="text/javascript">
+        alert("등록 성공");
+        location.href="/mypage/register";
+        </script>`);
+    }
+}
+
+export {render, user, record, registerdata,};

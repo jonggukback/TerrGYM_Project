@@ -29,7 +29,7 @@ class User {
             return userinfo;
         }
     }
-
+    
     async profile(uid){
         if (!uid){
             return { profile : '로그인 상태가 아닙니다.'};

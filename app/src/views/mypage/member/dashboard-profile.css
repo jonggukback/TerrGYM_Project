@@ -1,0 +1,251 @@
+body {
+  font-size: .875rem;
+}
+
+.feather {
+  width: 16px;
+  height: 16px;
+}
+
+/*
+* Sidebar
+*/
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  /* rtl:raw:
+  right: 0;
+  */
+  bottom: 0;
+  /* rtl:remove */
+  left: 0;
+  z-index: 100; /* Behind the navbar */
+  padding-top: 5rem;
+  box-shadow: 10px 0 10px rgba(0, 0, 0, .1); /* x-offset, y-offset, blur, color */
+  
+}
+
+@media (max-width: 767.98px) {
+  .sidebar {
+    top: 5rem;
+  }
+}
+
+.sidebar-sticky {
+  position: relative;
+  top: 0;
+  height: calc(100vh - 48px);
+  padding-top: .5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
+
+.sidebar .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.sidebar .nav-link .feather {
+  margin-right: 4px;
+  color: #727272;
+}
+
+.sidebar .nav-link.active {
+  color: #bbdefb;
+}
+
+.sidebar .nav-link:hover .feather,
+.sidebar .nav-link.active .feather {
+  color: inherit;
+}
+
+.sidebar-heading {
+  font-size: .75rem;
+}
+
+/* ######################################## */
+
+body {
+  /* min-height: 100vh; */
+  /* min-height: -webkit-fill-available; */
+  width: 1350px;
+  height: 1000px;
+  background-color: #f5f5f4;
+  /* background-color: #fff; */
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+main {
+  height: 200vh;
+  /* height: -webkit-fill-available; */
+  /* max-height: 100vh; */
+  height: max-content;
+  overflow-x: auto;
+  overflow-y: hidden;
+  
+}
+
+.dropdown-toggle { outline: 0; }
+
+.btn-toggle {
+  padding: .25rem .5rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, .65);
+  background-color: transparent;
+}
+.btn-toggle:hover,
+.btn-toggle:focus {
+  color: rgba(0, 0, 0, .85);
+  background-color: #bbdefb;
+}
+
+.btn-toggle::before {
+  width: 1.25em;
+  line-height: 0;
+  content: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgba%280,0,0,.5%29' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/%3e%3c/svg%3e");
+  transition: transform .35s ease;
+  transform-origin: .5em 50%;
+}
+
+.btn-toggle[aria-expanded="true"] {
+  color: rgba(0, 0, 0, .85);
+}
+.btn-toggle[aria-expanded="true"]::before {
+  transform: rotate(90deg);
+}
+
+.btn-toggle-nav a {
+  padding: .1875rem .5rem;
+  margin-top: .125rem;
+  margin-left: 1.25rem;
+}
+.btn-toggle-nav a:hover,
+.btn-toggle-nav a:focus {
+  background-color: #bbdefb;
+}
+
+.scrollarea {
+  overflow-y: auto;
+}
+
+/* ##################################### */
+
+
+/* ************* 사용자 정의 *********** */
+
+.navbar {
+  padding: 0rem 2rem;
+  z-index: 999;
+}
+
+.navbar-brand {
+  font-size: 2rem;
+}
+
+.logo {
+  width: 5px;
+  height: 5px;
+
+}
+
+#navbtn {
+  margin-right: 2.5rem;
+}
+
+/* 나의 운동일지 / 나의 문의 / 나의 수강 / 나의 정보 글자크기 */
+.btn {
+  font-size: 1.1rem;
+}
+
+/* 나의 운동일지 ... 하위 메뉴 글자크기 */
+ul li {
+  font-size: 1rem;
+}
+
+/* 'My page' 하단 패딩 */
+span {
+  padding-bottom: 2rem;
+}
+
+/*###########################  나의 정보  ###############################*/
+.container{
+  width: auto;
+  height: auto;
+}
+
+.content-mem{
+  width:auto;
+  height:max-content;
+  background-color: white;
+  border-radius: 8px;
+  padding:30px;
+  margin: 20px 0 ;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .1); /* x-offset, y-offset, blur, color */
+  position: relative;
+  display: flex;
+}
+
+
+.mem-pic{
+  /* float: left; */
+  width: 25%;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .1);
+  margin: 50px 100px;
+  margin-right: 100px;
+  border-radius: 50%;
+}
+
+.mem-text{
+  margin: 25px;
+  float: left;
+  width: 50%;
+  
+}
+
+.mem-icon{
+  display:flex;
+
+}
+
+.content-edit{
+  width: auto;
+  height: max-content;
+  line-height: 40px;
+  background-color: white;
+  border-radius: 8px;
+  padding: 10px;
+  margin: 20px 0;
+  box-shadow: 2px 5px 10px rgba(0, 0, 0, .1); /* x-offset, y-offset, blur, color */
+}
+
+
+.form-control{
+  width: 500px;
+}
+
+form{
+  width: 600px;
+  margin: 20px 50px 0 20px;
+}
+
+.edit-btn{
+  margin: 40px 5px 50px 5px;
+  /* justify-content: space-between; */
+}
+
+/*##################### 파란색 구분선 ####################*/
+.divhr {
+  padding-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+#main {
+  padding-top: 3rem;
+}
+
+
+/* ************************************* */

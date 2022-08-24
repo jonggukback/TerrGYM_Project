@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+(() => {
+  'use strict'
+  const tooltipTriggerList = Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+  tooltipTriggerList.forEach(tooltipTriggerEl => {
+    new bootstrap.Tooltip(tooltipTriggerEl)
+  })
+})()
+</script>
+<body>
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+            
+        <div class="position-sticky p-3 flex-shrink-0 bg-light">
+          <!-- <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <svg class="bi pe-none me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
+            <span class="fs-1 fw-semibold">My page</span>
+          </a> -->
+        <span class="fs-1 fw-semibold mb-5">My page</span>
+        <div style="height: 30px;"></div>
+          
+          <ul class="list-unstyled ps-0">
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                나의 운동일지
+              </button>
+              <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="/mypage/record" class="link-dark d-inline-flex text-decoration-none rounded">오늘의 기록</a></li>
+                  <li><a href="#" class="link-dark d-inline-flex text-decoration-none rounded">전체 보기</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+                나의 문의
+              </button>
+              <div class="collapse" id="dashboard-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="/mypage/question" class="link-dark d-inline-flex text-decoration-none rounded">나의 문의내역</a></li>
+
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                나의 수강
+              </button>
+              <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="/mypage/register" class="link-dark d-inline-flex text-decoration-none rounded">수강신청</a></li>
+                  <li><a href="/mypage/regiList" class="link-dark d-inline-flex text-decoration-none rounded">수강내역</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+            <li class="mb-1">
+              <button class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">
+                나의 정보
+              </button>
+              <div class="collapse" id="account-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                  <li><a href="/mypage/member" class="link-dark d-inline-flex text-decoration-none rounded">회원 정보수정</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="border-top my-3"></li>
+          </ul>
+        </div>
+        
+      </nav>
+</body>
+</html>

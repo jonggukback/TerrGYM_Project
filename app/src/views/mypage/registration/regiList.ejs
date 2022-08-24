@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.98.0">
+    <title>IntelliGym 수강내역</title>
+
+    <!-- ################## CSS ################## -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+    <!-- ################## Jquery ################## -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <!-- ################## JS ################## -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+
+    <!-- ################## fontawesome ################## -->
+    <script src="https://kit.fontawesome.com/fd76fe00bf.js" crossorigin="anonymous"></script>
+
+    <script src="/mypage/registration/regiList.js"></script>
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .card:hover {
+        border : 3px solid #03a9f4;
+        cursor: pointer;
+      }
+    </style>
+
+  </head>
+  <body>
+<!-- 
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+    
+    <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDync9al_o87hKg744E6_AX3WDVJQ1PCM0",
+      authDomain: "testlogin-e3edb.firebaseapp.com",
+      databaseURL: "https://testlogin-e3edb-default-rtdb.firebaseio.com",
+      projectId: "testlogin-e3edb",
+      storageBucket: "testlogin-e3edb.appspot.com",
+      messagingSenderId: "793640808427",
+      appId: "1:793640808427:web:ad4c4722e28e6822ab33ae",
+      measurementId: "G-8CZSZ9B0BF"
+    };
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script>
+      const db = firebase.firestore();
+      const storage = firebase.storage(); 
+      
+      let myuid = "dX3ECfvy9UNglaXyI90wSniy2fx2"
+      let clickId = null;
+
+      //////////////////// onSnapshot() 실시간 업데이트 가져오기 ////////////////////
+      db.collection('myclass').where('UID', '==', myuid).onSnapshot((result)=>{
+        $('.list-container').html('');
+        result.forEach((a)=> {
+            const template = `
+              <div class="card mb-3 mt-3 active">
+                <h5 class="card-header fs-6">${a.id}</h5>
+                <div class="card-body">
+                  <h5 class="card-title fw-bold">${a.data().강의명}</h5>
+                  <p class="card-text fs-6 fw-semibold">
+                    ${a.data().강의번호} | 강사명 : ${a.data().강사명} | 강의시간 : ${a.data().강의시간} (50분)
+                  </p>
+                </div>
+              </div>
+          `;
+          $('.list-container').append(template);
+        })
+              ////// 수강내역(카드) 클릭 시 이벤트 - css효과
+        $('.card').click(function(e) {
+              
+              // clickId는 전역변수로 빼야 사용가능!!
+              // a.id 값을 clickId에 담기
+              clickId = $(this).find('.card-header').text()
+              console.log(clickId);
+              
+              $('.card').css("border","") // 나머지는 bordr 스타일X
+              $(this).css("border","3px solid #03a9f4") // 클릭한 카드만 스타일적용
+            
+            }).then(function(){
+              console.log("성공");
+            }).catch(function(err){
+              console.log(err);
+            })
+
+      $('#btn_cancel').unbind("click");
+      
+      $('#btn_cancel').bind("click",function() {
+        // yes, no 확인창
+        if(clickId) {
+          if(confirm("선택한 수강을 취소하시겠습니까?")) {
+                    // yes -> DB에서 수강내역 삭제
+                    db.collection('myclass').doc(clickId).delete().then(()=>{
+                      console.log("Document successfully deleted!");
+                    })
+                    .catch((err)=>{
+                    console.log(err);
+                    })
+                } else {
+          // no
+          console.log("cancelled");
+          }
+        }
+        else {
+          alert("취소할 내역을 선택해 주세요.");
+        }   
+      })
+      }) ////////////////// onSnapshot() 실시간 업데이트 가져오기 //////////////////
+          
+        
+    </script> -->
+
+
+    <!-- ################## navbar Start ##################-->
+    <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/nav.ejs") %>
+    <!-- ################## navbar End ##################-->
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- ######################## side bar ######################################### -->
+        <%- include ("/Users/comedown/Desktop/TerrGYM/app/src/views/mypage/common/side.ejs") %>
+       <!-- ########################## end of side bar ######################################### -->
+
+
+        <main class="col-md-7 col-lg-6 ms-sm-auto px-md-4" id="main">
+          <div class="container ps-5 mt-4">
+
+            <h1 class="display-7 fw-bold">수강내역</h1>
+            <div class="divhr" style='background:#03a9f4; height:5px; width:100%;'></div>
+            <h6>※ 노쇼 시 일주일간 수강신청이 불가하오니 미리 취소해 주세요.</h6>
+            <section class="list-container overflow-auto" style="height: 570px;">
+              <!-- firebase here -->
+            </section>
+
+            <div class="d-grid gap-2 col-6 mx-auto mt-4">
+              <button id="btn_cancel" class="btn btn-primary btn-lg p-3 m-1" type="button">
+                <i class="fa-solid fa-rectangle-xmark"></i>&nbsp;수강취소
+              </button>
+            </div>
+            
+          </div> <!-- end of div.container -->
+        </main>
+        
+        <article class="col-md-5 col-lg-4 d-md-block">
+          <div class="container mt-5 pt-5 text-center">
+            <img src="/mypage/registration/001.png" class="img-fluid rounded" style="width: 450px;" alt="...">
+          </div>
+        </article>
+
+      </div> <!-- end of div.row -->
+    </div> <!-- end of div.container -->
+
+      
+
+  </body>
+</html>

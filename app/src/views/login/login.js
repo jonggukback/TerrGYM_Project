@@ -80,7 +80,7 @@ function login(){
         console.log(res.uid);
         if (res.success) {
             alert('로그인 성공');
-            location.href = '/mypage'
+            location.href = '/'
         }else {
             alert(res.msg);
         }

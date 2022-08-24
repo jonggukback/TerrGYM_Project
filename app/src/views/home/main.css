@@ -1,0 +1,684 @@
+*{
+    padding:0;
+    margin: 0;
+    /* border: 1px solid red; */
+}
+
+body {
+    background-color: #f5f5f4;
+    /* background-color: #263343; */
+    color: black;
+    box-shadow: 0.4em 0.4em 1em 1em rgba(3, 3, 3, 0.08);
+}
+
+.container-bg {
+    max-width:1250px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    /* height: 100vh; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #FFFFFF;
+}
+
+
+/********** Template CSS **********/
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    right: 45px;
+    bottom: 45px;
+    z-index: 99;
+    
+}
+
+/*** Spinner ***/
+/* #spinner {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-out, visibility 0s linear .5s;
+    z-index: 99999;
+}
+
+#spinner.show {
+    transition: opacity .5s ease-out, visibility 0s linear 0s;
+    visibility: visible;
+    opacity: 1;
+} */
+
+
+/************************************ Button **************************************/
+.btn {
+    transition: .5s;
+}
+
+.btn.btn-primary,
+.btn.btn-secondary {
+    color: #FFFF;
+    
+}
+
+.btn-square {
+    width: 38px;
+    height: 38px;
+}
+
+.btn-sm-square {
+    width: 32px;
+    height: 32px;
+}
+
+.btn-lg-square {
+    width: 48px;
+    height: 48px;
+}
+
+.btn-square,
+.btn-sm-square,
+.btn-lg-square {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: normal;
+    border-radius: 50px;
+    /* border: 1px solid red; */
+}
+
+
+/************************************ Navbar **********************************/
+.nav-bar {
+    position: relative;
+    margin-top: 45px;
+    padding: 0 3rem;
+    transition: .5s;
+    z-index: 9999;
+    /* border: 1px solid red; */
+
+}
+
+.nav-bar.sticky-top {
+    position:sticky;
+    padding: 0;
+    /* 맨 앞에 놓기 */
+    z-index: 9999; 
+}
+
+.navbar {
+    box-shadow: 0 0 30px rgba(22, 22, 22, 0.08);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: .5s;
+}
+
+.navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: black;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+    
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    /* color: var(--primary); */
+    
+}
+
+@media (max-width: 991.98px) {
+    .nav-bar {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand {
+    height: 75px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    /* color: var(--dark); */
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        top: 100%;
+        margin-top: 0;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+        
+    }
+
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+    }
+}
+
+.nav-login a{
+    margin-left: 20px;
+    font-size: 13px;
+    text-decoration: none;
+    color: gray;
+    /* border: red 1px solid; */
+}
+
+
+/*************************************** Header *****************************************/
+@media (min-width: 992px) {
+    .header {
+        margin-top: -120px;
+        /* border: violet solid 5px; */
+    }
+}
+
+#headerbox1 {
+    position:relative;
+    max-width:100%;
+    left: 0px;
+    width: 100%;
+    height:600px;
+    overflow:hidden;
+    z-index: 99;
+}
+
+/* .video-wrap video{
+    display: block;
+} */
+
+.text-wrap {
+    display: block;
+    top: 50%;
+    width: 100%;
+}
+
+/* .text-wrap {
+    display: block;
+    width: 50%;
+    height: auto;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #000;
+    opacity: 0.5;
+    position: absolute;
+    border: 1px solid blue;
+    z-index: 2;
+} */
+
+
+/* .header-carousel .owl-nav {
+    position: absolute;
+    top: 50%;
+    left: -25px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+
+} */
+
+/* .header-carousel .owl-nav .owl-prev,
+.header-carousel .owl-nav .owl-next {
+    margin: 7px 0;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    background: var(--primary);
+    border-radius: 40px;
+    font-size: 20px;
+    transition: .5s;
+    border: 1px solid red;
+} */
+
+/* .header-carousel .owl-nav .owl-prev:hover,
+.header-carousel .owl-nav .owl-next:hover {
+    /* background: var(--dark);
+} */
+
+@media (max-width: 768px) {
+    .header-carousel .owl-nav {
+        left: 25px;
+    }
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+    color: #DDDDDD;
+    /* border: 1px solid red; */
+}
+
+
+/*** Icon - intelliGYM 아이콘 ***/
+.icon {
+    padding: 15px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #FFFFFF !important;
+    border-radius: 50px;
+    /* border: red 1px solid; */
+    /* border: 1px dashed var(--primary) !important; */
+}
+
+
+/**************************************** About **************************************/
+.about-img img {
+    position: relative;
+    z-index: 2;
+}
+
+.about-img::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: -50%;
+    width: 100%;
+    height: 100%;
+    /* background: var(--primary); */
+    transform: skew(20deg);
+    z-index: 1;
+}
+
+/*************************************** Program ***************************************/
+.cat-item div {
+    background: #FFFFFF;
+    border: 1px dashed rgba(0, 185, 142, .3);
+    transition: .5s;
+    text-decoration: none;
+
+    /* border: 1px solid red; */
+
+}
+
+#deco{
+    text-decoration: none;
+    color: #3f4244;
+    font-weight: 4rem;
+}
+
+.cat-item:hover div {
+    border-color: transparent;
+    background-color: #3f4244;
+    
+    /* border: 1px solid red; */
+
+}
+
+.cat-item div * {
+    transition: .5s;
+    /* border: 1px solid red; */
+}
+
+.cat-item:hover div * {
+    color: #FFFFFF !important;
+}
+/* 
+.rounded.p-4{
+    text-decoration: none;
+    border: 1px solid red;
+} */
+
+.fadeInUp h5{
+    font-weight: bold;
+}
+
+/********************************************* Property List *****************************************/
+.nav-pills .nav-item .btn {
+    /* color: var(--dark); */
+}
+
+.nav-pills .nav-item .btn:hover,
+.nav-pills .nav-item .btn.active {
+    color: #FFFFFF;
+}
+
+.property-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+}
+
+.property-item img {
+    transition: .5s;
+}
+
+.property-item:hover img {
+    transform: scale(1.1);
+}
+
+.property-item .border-top {
+    border-top: 1px dashed rgba(0, 185, 142, .3) !important;
+}
+
+.property-item .border-end {
+    border-right: 1px dashed rgba(0, 185, 142, .3) !important;
+}
+
+
+/****************************************** Trainers *********************************/
+.team-item {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+    transition: .5s;
+
+}
+
+.team-item .btn {
+    /* color: var(--primary); */
+    background: #FFFFFF;
+    box-shadow: 0 0 30px rgba(0, 0, 0, .15);
+}
+
+.team-item .btn:hover {
+    color: blue;
+    /* background: var(--primary); */
+}
+
+.team-item:hover {
+    transform: scale(1.1);
+    /* border-color: var(--secondary) !important; */
+}
+
+.team-item:hover .bg-primary {
+    /* border: 1px solid red; */
+    /* background: var(--secondary) !important; */
+}
+
+.team-item:hover .bg-primary i {
+    /* border: 1px solid red; */
+    /* color: var(--secondary) !important; */
+}
+
+#img-trainers {
+    display: block;
+    margin: auto;
+}
+
+
+
+
+/********************************************** 공지사항 ***************************************/
+li{ list-style: none; }
+a{ text-decoration: none; }
+
+.management{
+    width: 1250px; height: 800px;
+    margin: 0 auto; /* 블록요소가 부모영역의 가로 가운데 처리 */
+    padding:7px ; box-sizing: border-box;
+}
+.management h1{
+    /* margin: 0 0 300px 0; */
+    text-align: center;
+}
+.management .info-title{
+    height: 70px; font-size: 40px; font-weight: bold;
+}
+/* .management .info-fill{
+    height: 70px; font-size: 28px; font-weight: normal;
+} */
+.management ul{
+    width: 100%; height: 660px;
+    padding: 17px;
+}
+.management li{
+    float: left; /* 수평나열 처리 */
+    width: 386px; height: 310px;
+    margin-right: 21px;
+}
+.management li:nth-child(3n){ /* 3의 배수번째 여백없앰 */
+    margin-right: 0;
+}
+.management li:nth-child(-n+3){ /* 1~3번째 선택 */
+    margin-bottom: 20px;
+}
+.management a{
+    display: block; /* 영역이 들어가게 처리 */
+    width: 100%; height: 100%; /* 부모영역전부상속 */
+    border: 1px solid #ccc;
+    padding: 35px;
+    box-sizing: border-box; /* 패딩과 테두리 수치를 영역안으로 인사이드 처리 */
+
+    position: relative; /* 앱솔루트받은 요소의 기준을 현재 요소로 변경 */
+}
+.management h4{
+    width: 100%; height: 30px;
+    line-height: 30px; /* 세로가운데 처리 */
+    margin-bottom: 20px;
+    font-size: 18px; font-weight: bold;
+
+    white-space: nowrap; /* 한줄로 처리 */
+    overflow: hidden; /* 보이지않게 처리 */
+    text-overflow: ellipsis; /* ... 줄임표시 */
+}
+.management p{
+    width: 100%; height: 75px; /* 3줄 * 25 */
+    line-height: 25px; text-align: justify;
+    font-size: 16px; color: #666;
+
+    overflow: hidden; /* 넘어간 영역 보이지 않게 처리*/
+
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 보여줄 줄수 표시 */
+    -webkit-box-orient: vertical;
+}
+.management .date{
+    position: absolute; /* 기본기준 : body */
+    bottom: 35px; color: #666;
+}
+.management .date:before{
+    content: '';
+    display: block; /* 선영역처리 */
+    width: 63px; height: 1px;
+    background-color: #ccc;
+
+    position: relative; /* 현재 위치에서 상대적 이동 */
+    top: -50px;
+}
+
+
+.management span{
+    transition: 0.3s; /* CSS변화에 시간차 처리 */
+}
+
+/* 버튼과 라인처리 */
+.management .gobtn{
+    display: block; width: 150px; height: 45px;
+    background-color: #062d53;
+    color: #fff; font-weight: bold;
+    line-height: 45px;
+    padding-left: 30px; box-sizing: border-box;
+    background-image: url(https://blog.kakaocdn.net/dn/bmomB7/btrIPXgpwvs/KwpkRunyPiWrk5l6k7omZK/img.gif);
+    background-repeat: no-repeat; /* 반복안함 */
+    background-position: calc(100% - 20px) center;
+
+    position: absolute;
+    right: -10px; bottom: -10px;
+    z-index: 100; /* 선들보다 화면 앞쪽으로 처리 */
+
+    display: none; /* 처음엔 안보이게 처리 */
+}
+.management .tline{
+    width: calc(100% + 2px); height: 3px;
+    background-color: #062d53;
+
+    position: absolute;
+    top: -1px; left: -1px;
+
+    /* 처음엔 안보이게 처리 */
+    transform: scaleX(0);
+    transform-origin: right center;
+}
+.management .bline{
+    width: calc(100% + 2px); height: 3px;
+    background-color: #062d53;
+
+    position: absolute;
+    bottom: -1px; left: -1px;
+
+    transform: scaleX(0);
+    transform-origin: left center;
+}
+.management .lline{
+    width: 3px; height: calc(100% + 2px);
+    background-color: #062d53;
+
+    position: absolute;
+    top: -1px; left: -1px;
+
+    transform: scaleY(0);
+    transform-origin: center top;
+}
+.management .rline{
+    width: 3px; height: calc(100% + 2px);
+    background-color: #062d53;
+
+    position: absolute;
+    top: -1px; right: -1px;
+
+    transform: scaleY(0);
+    transform-origin: center bottom;
+}
+
+/* hover effect */
+.management a:hover .gobtn{ display: block; }
+.management a:hover .tline, .management a:hover .bline{ transform: scaleX(1); }
+.management a:hover .lline, .management a:hover .rline{ transform: scaleY(1); }
+
+
+
+/******************************************** Map *****************************************/
+.mapwrap { 
+    width: 100%;
+    height: 900px;
+}
+
+.mapwrap h4{
+    display: flex;
+    justify-items: left;
+    font-weight: bold;
+}
+.mapwrap p{
+    display: flex;
+    justify-items: left;
+}
+
+#map {
+    width: 100%; 
+    height:400px;
+    display: flex;
+}
+
+
+.icon_map{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px ;
+}
+
+
+
+
+
+/******************************************** Footer ***************************************/
+
+.footer .btn.btn-social {
+    margin-right: 5px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: 35px;
+    transition: .3s;
+}
+
+.footer .btn.btn-social:hover {
+    border-color: var(--light);
+}
+
+.footer .btn.btn-link {
+    display: block;
+    margin-bottom: 5px;
+    padding: 0;
+    text-align: left;
+    font-size: 15px;
+    font-weight: normal;
+    text-transform: capitalize;
+    transition: .3s;
+}
+
+.footer .btn.btn-link::before {
+    position: relative;
+    content: "\f105";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 10px;
+}
+
+.footer .btn.btn-link:hover {
+    letter-spacing: 1px;
+    box-shadow: none;
+
+}
+
+.footer .form-control {
+    border-color: rgba(255,255,255,0.5);
+}
+
+.footer .copyright {
+    padding: 25px 0;
+    font-size: 15px;
+    border-top: 1px solid rgba(256, 256, 256, .1);
+}
+
+.footer .copyright a {
+    color: white;
+    font-weight: 700;
+    /* color: var(—light); */
+}
+
+.footer .footer-menu a {
+    margin-right: 15px;
+    padding-right: 15px;
+    border-right: 1px solid rgba(255, 255, 255, .1);
+}
+
+.footer .footer-menu a:last-child {
+    margin-right: 0;
+    padding-right: 0;
+    border-right: none;
+}
+
