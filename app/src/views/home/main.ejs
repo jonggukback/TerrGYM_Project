@@ -542,12 +542,21 @@
     <script src="/home/main.js"></script>
     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=dcee1df523562b8fe60f09a5bef656ef"></script>
     <script> 
-    const container = document.getElementById('map');
-        const options = {
+        let container = document.getElementById('map');
+        let options = {
             center: new kakao.maps.LatLng(33.450701, 126.570667),
             level: 3
         };
-        const map = new kakao.maps.Map(container, options);
+        let map = new kakao.maps.Map(container, options);
+        let markerPosition = new kakao.maps.LatLng(37.498997, 127.032909);
+    
+        // 마커를 생성합니다
+        let marker = new kakao.maps.Marker({
+            position: markerPosition
+        });
+        
+        // 마커가 지도 위에 표시되도록 설정합니다
+        marker.setMap(map);
     </script>
 </body>
 </html>

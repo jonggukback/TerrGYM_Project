@@ -3,8 +3,8 @@
 /*============== firebase 연결 ==============*/
 import { config } from '../config/config.js';
 import { initializeApp } from "firebase/app";
-import { getAuth, signOut , signInWithEmailAndPassword, createUserWithEmailAndPassword, onAuthStateChanged  } from "firebase/auth";
-import { doc, getDoc,setDoc, getFirestore } from "firebase/firestore";
+import { getAuth, signOut , signInWithEmailAndPassword, createUserWithEmailAndPassword, deleteUser  } from "firebase/auth";
+import { doc, getDoc,setDoc, getFirestore ,deleteDoc ,updateDoc} from "firebase/firestore";
 
 const firebase = initializeApp(config.firebaseConfig);
 const db = getFirestore(firebase);
@@ -13,6 +13,31 @@ const auth = getAuth();
 class User {
     constructor(body){
         this.body = body
+    }
+
+    async userUpdate(){
+        const user = auth.currentUser;
+        const req = this.body;
+
+        const washingtonRef = doc(db, "member", user.uid);
+
+        // Set the "capital" field of the city 'DC'
+        const result = await updateDoc(washingtonRef, req).then(()=>{return {success:true}}).catch(()=>{return {success:true}})
+        return result;
+    }
+
+    async uesrDelete(){
+        const user = auth.currentUser;
+
+        const result =  await deleteUser(user).then(() => {
+            return { success : true }
+        }).catch((error) => {
+             return { success : false }
+        });
+
+        await deleteDoc(doc(db, "member", user.uid));
+
+        return result;
     }
 
     islogin(){
@@ -75,7 +100,8 @@ class User {
             name = this.body.name,
             gender = this.body.gender,
             address = this.body.address,
-            address2 = this.body.address2;
+            address2 = this.body.address2,
+            phone = this.body.phone;
 
         const respones = await createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
@@ -87,6 +113,7 @@ class User {
                 gender: gender,
                 name: name,
                 email: email,
+                phone: phone,
             });
             return { success:true, msg:'가입이 완료되었습니다.', }
         }).catch((error) => {

@@ -45,6 +45,8 @@ router.get('/mypage/question/questionUpload',render.questionUpload);
 router.get('/mypage/member',render.memberpage);
 
 router.post('/mypage/member/getprofile',user.memberprofile);
+router.post('/mypage/member/userdelete',user.userDelete);
+router.post('/mypage/member/userupdate',user.userUpdate);
 /*============== 로그인 요청 ==============*/
 router.get('/login',render.login);
 router.post('/login',user.login);

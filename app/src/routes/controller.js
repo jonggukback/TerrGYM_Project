@@ -50,6 +50,16 @@ const render = {
 }
 
 const user = {
+    userUpdate : async (req, res) => {
+        const user = new User(req.body);
+        const respones = await user.userUpdate();
+        return res.json(respones);
+    },
+    userDelete : async (req, res) => {
+        const user = new User(req.body);
+        const respones = await user.uesrDelete();
+        return res.json(respones);
+    },
     login : async (req, res) => {
         const user = new User(req.body);
         const respones = await user.login();
